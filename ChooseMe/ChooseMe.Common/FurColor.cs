@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChooseMe.Common
+﻿namespace ChooseMe.Common
 {
-    class FurColor
+    public enum FurColor
     {
+        White,
+        Orange,
+        OrangeAndWhite,
+        Brown,
+        BrownAndWhite,
+        Tabby,
+        Gray,
+        GrayAndWhite,
+        Calico,
+        Tortie,
+        Black,
+        BlackAndWhite,
+        Mixed
     }
 }

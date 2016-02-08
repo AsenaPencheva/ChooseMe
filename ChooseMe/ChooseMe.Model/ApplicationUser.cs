@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChooseMe.Model
+﻿namespace ChooseMe.Model
 {
-    class ApplicationUser
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    class ApplicationUser: User
     {
     }
 }
