@@ -1,0 +1,16 @@
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\ChooseMe.Models.dll.config
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\ChooseMe.Models.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\ChooseMe.Models.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\ChooseMe.Common.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\EntityFramework.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\ChooseMe.Common.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\EntityFramework.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\obj\Debug\ChooseMe.Models.csprojResolveAssemblyReference.cache
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\obj\Debug\ChooseMe.Models.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Model\obj\Debug\ChooseMe.Models.pdb

@@ -27,25 +27,25 @@
 
         public DateTime dateOfBirth { get; set; }
 
-        public ICollection<Like> Likes
+        public virtual ICollection<Like> Likes
         {
             get { return this.likes; }
             set { this.likes = value; }
         }
 
-        public ICollection<VolunteerForm> VolunteerForms
+        public virtual ICollection<VolunteerForm> VolunteerForms
         {
             get { return this.volunteerForms; }
             set { this.volunteerForms = value; }
         }
 
-        public ICollection<AdoptionForm> AdoptionForms
+        public virtual ICollection<AdoptionForm> AdoptionForms
         {
             get { return this.adoptionForms; }
             set { this.adoptionForms = value; }
         }
 
-        public ICollection<Godparent> Godparents
+        public virtual ICollection<Godparent> Godparents
         {
             get { return this.godparents; }
             set { this.godparents = value; }

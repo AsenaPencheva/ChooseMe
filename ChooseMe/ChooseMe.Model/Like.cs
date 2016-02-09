@@ -11,11 +11,11 @@
         [ForeignKey("User")]
         public string UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         [ForeignKey("Animal")]
         public int AnimalId { get; set; }
 
-        public Animal Animal { get; set; }
+        public virtual Animal Animal { get; set; }
     }
 }

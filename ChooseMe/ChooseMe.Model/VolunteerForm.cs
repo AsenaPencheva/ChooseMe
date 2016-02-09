@@ -21,8 +21,8 @@
         public string Other { get; set; }
 
         [ForeignKey("Organization")]
-        public int OrganizationId { get; set; }
+        public string OrganizationId { get; set; }
 
-        public Organization Organization{ get; set; }
+        public virtual Organization Organization { get; set; }
     }
 }

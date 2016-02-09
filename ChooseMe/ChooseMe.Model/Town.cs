@@ -27,19 +27,19 @@
 
         public CountriesEnum Country { get; set; }
 
-        public ICollection<Animal> CanTravelToAnimals
+        public virtual ICollection<Animal> CanTravelToAnimals
         {
             get { return this.canTravelToAnimals; }
             set { this.canTravelToAnimals = value; }
         }
 
-        public ICollection<Organization> Organizations
+        public virtual ICollection<Organization> Organizations
         {
             get { return this.organizations; }
             set { this.organizations = value; }
         }
 
-        public ICollection<ApplicationUser> Users
+        public virtual ICollection<ApplicationUser> Users
         {
             get { return this.users; }
             set { this.users = value; }

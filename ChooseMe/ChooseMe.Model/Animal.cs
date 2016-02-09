@@ -56,6 +56,7 @@
 
         public bool IsChipped { get; set; }
 
+        [Required]
         [ForeignKey("Organization")]
         public string OrganizationId { get; set; }
 

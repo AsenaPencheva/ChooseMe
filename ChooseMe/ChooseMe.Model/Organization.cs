@@ -23,13 +23,13 @@
 
         public bool IsLookingForVolunteers { get; set; }
 
-        public ICollection<Animal> Animals
+        public virtual ICollection<Animal> Animals
         {
             get { return this.animals; }
             set { this.animals = value; }
         }
 
-        public ICollection<VolunteerForm> VolunteerForms
+        public virtual ICollection<VolunteerForm> VolunteerForms
         {
             get { return this.volunteerForms; }
             set { this.volunteerForms = value; }
