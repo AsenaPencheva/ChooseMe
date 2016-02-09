@@ -1,9 +1,10 @@
-﻿namespace ChooseMe.Model
+﻿namespace ChooseMe.Models
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -22,6 +23,11 @@
         public DateTime CreatedOn { get; set; }
 
         public string ImageURL { get; set; }
+
+        [ForeignKey("Town")]
+        public int TownId { get; set; }
+
+        public Town Town { get; set; }
 
         public virtual ICollection<Message> Messages
         {

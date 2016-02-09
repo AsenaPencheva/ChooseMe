@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9506A8A6-D8C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseMe.Data", "ChooseMe.Data\ChooseMe.Data.csproj", "{88D5B740-C795-4AFF-9E27-AE1E83821225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseMe.Model", "ChooseMe.Model\ChooseMe.Model.csproj", "{97D0732C-5EA3-4CC6-9903-8012BDF99104}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseMe.Models", "ChooseMe.Model\ChooseMe.Models.csproj", "{97D0732C-5EA3-4CC6-9903-8012BDF99104}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseMe.Services", "ChooseMe.Services\ChooseMe.Services.csproj", "{6742547C-DEED-4921-BCED-F17BEB6DD07D}"
 EndProject

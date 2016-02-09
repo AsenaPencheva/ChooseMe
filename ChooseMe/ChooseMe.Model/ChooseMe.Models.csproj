@@ -7,8 +7,8 @@
     <ProjectGuid>{97D0732C-5EA3-4CC6-9903-8012BDF99104}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChooseMe.Model</RootNamespace>
-    <AssemblyName>ChooseMe.Model</AssemblyName>
+    <RootNamespace>ChooseMe.Models</RootNamespace>
+    <AssemblyName>ChooseMe.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,11 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdoptionForm.cs" />
     <Compile Include="Animal.cs" />
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Godparent.cs" />
+    <Compile Include="Like.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Town.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="VolunteerForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

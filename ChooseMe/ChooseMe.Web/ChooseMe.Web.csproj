@@ -255,9 +255,9 @@
       <Project>{88d5b740-c795-4aff-9e27-ae1e83821225}</Project>
       <Name>ChooseMe.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ChooseMe.Model\ChooseMe.Model.csproj">
+    <ProjectReference Include="..\ChooseMe.Model\ChooseMe.Models.csproj">
       <Project>{97d0732c-5ea3-4cc6-9903-8012bdf99104}</Project>
-      <Name>ChooseMe.Model</Name>
+      <Name>ChooseMe.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\ChooseMe.Services\ChooseMe.Services.csproj">
       <Project>{6742547c-deed-4921-bced-f17beb6dd07d}</Project>

@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChooseMe.Model
+﻿namespace ChooseMe.Models
 {
-    class Message
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public class Message
     {
+        [Key]
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        public string Content { get; set; }
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        [ForeignKey("Organization")]
+        public string OrganizationId { get; set; }
+
+        public Organization Organization { get; set; }
     }
 }

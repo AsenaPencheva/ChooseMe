@@ -1,10 +1,10 @@
-﻿namespace ChooseMe.Model
+﻿namespace ChooseMe.Models
 {
     using Common;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     public class Animal
     {
         private ICollection<Town> towns;
@@ -18,9 +18,9 @@
         public Animal()
         {
             this.towns = new HashSet<Town>();
-            this.towns = new HashSet<Like>();
-            this.towns = new HashSet<Comment>();
-            this.towns = new HashSet<AdoptionForm>();
+            this.likes = new HashSet<Like>();
+            this.comments = new HashSet<Comment>();
+            this.adoptionForms = new HashSet<AdoptionForm>();
         }
 
         [Key]
@@ -31,6 +31,8 @@
         public string Name { get; set; }
 
         public Gender Gender { get; set; }
+
+        public string[] Photos { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 
@@ -54,6 +56,7 @@
 
         public bool IsChipped { get; set; }
 
+        [ForeignKey("Organization")]
         public string OrganizationId { get; set; }
 
         public virtual Organization Organization { get; set; }
