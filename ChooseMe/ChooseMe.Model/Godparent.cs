@@ -9,6 +9,7 @@
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public GodparentType Type { get; set; }
 
         [ForeignKey("User")]

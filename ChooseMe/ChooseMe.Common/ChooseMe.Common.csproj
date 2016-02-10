@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Assemblies.cs" />
+    <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Enums\AnimalType.cs" />
     <Compile Include="Enums\CountriesEnum.cs" />
     <Compile Include="Enums\FurColor.cs" />

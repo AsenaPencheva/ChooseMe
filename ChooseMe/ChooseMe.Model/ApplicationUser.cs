@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using System.ComponentModel.DataAnnotations;
     public class ApplicationUser: User
     {
         private ICollection<Like> likes;
@@ -21,11 +21,13 @@
             this.godparents = new HashSet<Godparent>();
         }
 
+        [Required]
+        [MinLength(3, ErrorMessage="Name must be at least 3 characters long")]
         public string FirstaName { get; set; }
 
         public string LastName { get; set; }
 
-        public DateTime dateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<Like> Likes
         {

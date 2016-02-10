@@ -14,6 +14,7 @@
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public string PhoneNumber { get; set; }
 
         public DateTime CreatedOn { get; set; }
