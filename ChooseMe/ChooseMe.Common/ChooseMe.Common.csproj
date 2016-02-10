@@ -40,13 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalType.cs" />
-    <Compile Include="CountriesEnum.cs" />
-    <Compile Include="FurColor.cs" />
-    <Compile Include="Gender.cs" />
-    <Compile Include="GodparentType.cs" />
+    <Compile Include="Constants\Assemblies.cs" />
+    <Compile Include="Enums\AnimalType.cs" />
+    <Compile Include="Enums\CountriesEnum.cs" />
+    <Compile Include="Enums\FurColor.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\GodparentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResidenceType.cs" />
+    <Compile Include="Enums\ResidenceType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

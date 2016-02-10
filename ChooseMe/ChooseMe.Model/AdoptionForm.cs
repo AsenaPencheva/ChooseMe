@@ -1,6 +1,6 @@
 ﻿namespace ChooseMe.Models
 {
-    using ChooseMe.Common;
+    using ChooseMe.Common.Enums;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class AdoptionForm: Form

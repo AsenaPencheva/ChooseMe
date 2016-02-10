@@ -5,7 +5,7 @@ namespace ChooseMe.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ChooseMe.Web.Data.ChooseMeDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<Web.Data.ChooseMeDbContext>
     {
         public Configuration()
         {

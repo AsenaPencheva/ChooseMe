@@ -1,4 +1,4 @@
-﻿namespace ChooseMe.Common
+﻿namespace ChooseMe.Common.Enums
 {
     public enum AnimalType
     {

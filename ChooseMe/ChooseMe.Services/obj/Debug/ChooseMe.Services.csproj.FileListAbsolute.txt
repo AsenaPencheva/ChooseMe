@@ -12,3 +12,13 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Micr
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\obj\Debug\ChooseMe.Services.csprojResolveAssemblyReference.cache
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\obj\Debug\ChooseMe.Services.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\obj\Debug\ChooseMe.Services.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Extensions.Conventions.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Web.Common.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Web.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\WebActivatorEx.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Extensions.Conventions.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Web.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Ninject.Web.Common.xml

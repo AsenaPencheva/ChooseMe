@@ -1,6 +1,6 @@
 ﻿namespace ChooseMe.Models
 {
-    using Common;
+    using Common.Enums;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
