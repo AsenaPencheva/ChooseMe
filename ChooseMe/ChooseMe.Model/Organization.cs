@@ -17,7 +17,6 @@
         }
 
         [Required]
-        [Index(IsUnique = true)]
         [MinLength(5, ErrorMessage="Organization name must be at leasr 5 characters long")]
         public string Name { get; set; }
 

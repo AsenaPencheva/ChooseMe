@@ -8,8 +8,6 @@
     using System.ComponentModel.DataAnnotations.Schema;
     public class Animal
     {
-        private ICollection<Town> towns;
-
         private ICollection<Like> likes;
 
         private ICollection<Comment> comments;
@@ -18,7 +16,6 @@
 
         public Animal()
         {
-            this.towns = new HashSet<Town>();
             this.likes = new HashSet<Like>();
             this.comments = new HashSet<Comment>();
             this.adoptionForms = new HashSet<AdoptionForm>();
@@ -72,12 +69,6 @@
         public string OrganizationId { get; set; }
 
         public virtual Organization Organization { get; set; }
-
-        public virtual ICollection<Town> Towns
-        {
-            get { return this.towns; }
-            set { this.towns = value; }
-        }
 
         public virtual ICollection<Like> Likes
         {
