@@ -9,12 +9,12 @@
     {
         private ICollection<Organization> organizations;
 
-        private ICollection<ApplicationUser> users;
+        private ICollection<Adopter> users;
 
         public Town()
         {
             this.organizations = new HashSet<Organization>();
-            this.users = new HashSet<ApplicationUser>();
+            this.users = new HashSet<Adopter>();
         }
 
         [Key]
@@ -30,7 +30,7 @@
             set { this.organizations = value; }
         }
 
-        public virtual ICollection<ApplicationUser> Users
+        public virtual ICollection<Adopter> Users
         {
             get { return this.users; }
             set { this.users = value; }

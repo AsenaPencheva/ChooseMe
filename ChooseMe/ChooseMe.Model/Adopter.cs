@@ -3,7 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public class ApplicationUser: User
+
+    using ChooseMe.Common.Constants;
+
+    public class Adopter: User
     {
         private ICollection<Like> likes;
 
@@ -13,7 +16,7 @@
 
         private ICollection<Godparent> godparents;
         
-        public ApplicationUser()
+        public Adopter()
         {
             this.likes = new HashSet<Like>();
             this.volunteerForms = new HashSet<VolunteerForm>();
@@ -22,11 +25,14 @@
         }
 
         [Required]
-        [MinLength(3, ErrorMessage="Name must be at least 3 characters long")]
-        public string FirstaName { get; set; }
+        [StringLength(Common.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Common.MinLengthName)]
+        public string FirstName { get; set; }
 
+        [Required]
+        [StringLength(Common.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Common.MinLengthName)]
         public string LastName { get; set; }
 
+        [Required]
         public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<Like> Likes

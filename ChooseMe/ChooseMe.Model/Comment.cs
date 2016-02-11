@@ -14,7 +14,7 @@
         [ForeignKey("User")]
         public string UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public Adopter User { get; set; }
 
         [ForeignKey("Animal")]
         public int AnimalId { get; set; }

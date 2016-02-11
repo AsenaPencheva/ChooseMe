@@ -59,7 +59,7 @@
   <ItemGroup>
     <Compile Include="AdoptionForm.cs" />
     <Compile Include="Animal.cs" />
-    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Adopter.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Form.cs" />
     <Compile Include="Godparent.cs" />
