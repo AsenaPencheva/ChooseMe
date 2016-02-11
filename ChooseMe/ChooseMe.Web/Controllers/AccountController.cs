@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ChooseMe.Models;
 using ChooseMe.Web.Models.Account;
+using ChooseMe.Common.Constants;
 
 namespace ChooseMe.Web.Controllers
 {
@@ -160,11 +161,17 @@ namespace ChooseMe.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(model.ImageURL == null)
+                {
+                    model.ImageURL = ControllersConst.DefaultAdopterImage;
+                }
+
                 var user = new Adopter {
                     UserName = model.FirstName,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
+                    ImageURL = model.ImageURL,
                     //DateOfBirth = model.DateOfBirth,
                 };
 
@@ -205,15 +212,23 @@ namespace ChooseMe.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (model.ImageURL == null)
+                {
+                    model.ImageURL = ControllersConst.DefaultOrganizationImage;
+                }
+
                 var user = new Organization {
                     UserName = model.Name,
                     Email = model.Email,
                     Name = model.Name,
                     Description = model.Description,
-                    IsLookingForVolunteers = model.IsLookingForVolunteers
+                    IsLookingForVolunteers = model.IsLookingForVolunteers,
+                    ImageURL = model.ImageURL,
+                    //DateOfFoundation = model.DateOfFoundation
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

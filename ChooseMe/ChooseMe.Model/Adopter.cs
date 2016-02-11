@@ -25,11 +25,11 @@
         }
 
         [Required]
-        [StringLength(Common.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Common.MinLengthName)]
+        [StringLength(ModelsConst.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = ModelsConst.MinLengthName)]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(Common.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Common.MinLengthName)]
+        [StringLength(ModelsConst.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = ModelsConst.MinLengthName)]
         public string LastName { get; set; }
 
       //  [Required]

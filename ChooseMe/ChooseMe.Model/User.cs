@@ -15,7 +15,7 @@
 
         public User()
         {
-            this.CreatedOn = DateTime.Now;
+            this.CreatedOn = DateTime.UtcNow;
             this.messages = new HashSet<Message>();
             this.comments = new HashSet<Comment>();
         }

@@ -8,7 +8,7 @@
     { 
         public Form()
         {
-            this.CreatedOn = DateTime.Now;
+            this.CreatedOn = DateTime.UtcNow;
         }
 
         [Key]

@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Assemblies.cs" />
-    <Compile Include="Constants\Common.cs" />
+    <Compile Include="Constants\ControllersConst.cs" />
+    <Compile Include="Constants\ModelsConst.cs" />
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Enums\AnimalType.cs" />
     <Compile Include="Enums\CountriesEnum.cs" />
