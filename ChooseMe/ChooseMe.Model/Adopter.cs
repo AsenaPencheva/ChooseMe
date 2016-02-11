@@ -32,8 +32,8 @@
         [StringLength(Common.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = Common.MinLengthName)]
         public string LastName { get; set; }
 
-        [Required]
-        public DateTime DateOfBirth { get; set; }
+      //  [Required]
+      //  public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<Like> Likes
         {

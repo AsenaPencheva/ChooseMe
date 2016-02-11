@@ -161,11 +161,11 @@ namespace ChooseMe.Web.Controllers
             if (ModelState.IsValid)
             {
                 var user = new Adopter {
-                    UserName = model.Email,
+                    UserName = model.FirstName,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    DateOfBirth = model.DateOfBirth,
+                    //DateOfBirth = model.DateOfBirth,
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -198,14 +198,21 @@ namespace ChooseMe.Web.Controllers
 
         //
         // POST: /Account/RegisterOrganization
- /*       [HttpPost]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterOrganization(RegisterOrganizationViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new Organization {
+                    UserName = model.Name,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Description = model.Description,
+                    IsLookingForVolunteers = model.IsLookingForVolunteers
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -224,7 +231,7 @@ namespace ChooseMe.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
-        }*/
+        }
 
         //
         // GET: /Account/ConfirmEmail

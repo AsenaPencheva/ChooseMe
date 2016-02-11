@@ -32,8 +32,8 @@
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
-        [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime DateOfBirth { get; set; }
+       // [Required]
+       // [DataType(DataType.DateTime)]
+        //public DateTime DateOfBirth { get; set; }
     }
 }

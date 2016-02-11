@@ -24,11 +24,6 @@
 
         public string ImageURL { get; set; }
 
-        [ForeignKey("Town")]
-        public int TownId { get; set; }
-
-        public virtual Town Town { get; set; }
-
         public virtual ICollection<Message> Messages
         {
             get { return this.messages; }
