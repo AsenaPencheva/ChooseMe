@@ -180,7 +180,7 @@ namespace ChooseMe.Web.Controllers
 
                 if (result.Succeeded)
                 {
-                    Roles.AddUserToRole(user.UserName, "Adopter");
+                    UserManager.AddToRole(user.Id, ControllersConst.AdopterRole);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -234,7 +234,7 @@ namespace ChooseMe.Web.Controllers
 
                 if (result.Succeeded)
                 {
-                    Roles.AddUserToRole(user.UserName, "Organization");
+                    UserManager.AddToRole(user.Id, ControllersConst.OrganizationRole);
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

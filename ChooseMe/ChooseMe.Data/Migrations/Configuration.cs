@@ -15,7 +15,8 @@ namespace ChooseMe.Data.Migrations
 
         protected override void Seed(Web.Data.ChooseMeDbContext context)
         {
-              SeedDb.Start(context);
+            var seed = new SeedDb();
+            seed.Start(context);
         }
     }
 }
