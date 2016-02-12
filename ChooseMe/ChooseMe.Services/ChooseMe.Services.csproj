@@ -81,12 +81,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AdopterService.cs" />
+    <Compile Include="AdoptionFormService.cs" />
+    <Compile Include="AnimalService.cs" />
+    <Compile Include="CommentService.cs" />
+    <Compile Include="Contracts\IAdopterService.cs" />
+    <Compile Include="Contracts\IAdoptionFormService.cs" />
+    <Compile Include="Contracts\IAnimalService.cs" />
+    <Compile Include="Contracts\ICommentService.cs" />
+    <Compile Include="Contracts\IGodparentService.cs" />
+    <Compile Include="Contracts\IMessageService.cs" />
+    <Compile Include="Contracts\IOrganizationService.cs" />
+    <Compile Include="Contracts\IVolunteerFormService.cs" />
+    <Compile Include="GodparentService.cs" />
+    <Compile Include="MessageService.cs" />
+    <Compile Include="OrganizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolunteerFormService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChooseMe.Common\ChooseMe.Common.csproj">
+      <Project>{54c8a307-a06b-4af4-803c-837c5df1407d}</Project>
+      <Name>ChooseMe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChooseMe.Data\ChooseMe.Data.csproj">
+      <Project>{88d5b740-c795-4aff-9e27-ae1e83821225}</Project>
+      <Name>ChooseMe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChooseMe.Model\ChooseMe.Models.csproj">
+      <Project>{97d0732c-5ea3-4cc6-9903-8012bdf99104}</Project>
+      <Name>ChooseMe.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

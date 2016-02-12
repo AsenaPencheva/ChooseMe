@@ -16,6 +16,7 @@
 
         public Animal()
         {
+            this.AddedOn = DateTime.UtcNow;
             this.likes = new HashSet<Like>();
             this.comments = new HashSet<Comment>();
             this.adoptionForms = new HashSet<AdoptionForm>();
@@ -34,6 +35,8 @@
         public Gender Gender { get; set; }
 
         public string[] Photos { get; set; }
+
+        public DateTime AddedOn { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 

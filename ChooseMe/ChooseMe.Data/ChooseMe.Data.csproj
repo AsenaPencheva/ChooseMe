@@ -102,10 +102,9 @@
       <Project>{97d0732c-5ea3-4cc6-9903-8012bdf99104}</Project>
       <Name>ChooseMe.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ChooseMe.Services\ChooseMe.Services.csproj">
-      <Project>{6742547c-deed-4921-bced-f17beb6dd07d}</Project>
-      <Name>ChooseMe.Services</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
