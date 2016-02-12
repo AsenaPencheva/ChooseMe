@@ -17,7 +17,7 @@
         [ForeignKey("User")]
         public string UserId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
+        public virtual Adopter User { get; set; }
 
         [ForeignKey("Organization")]
         public string OrganizationId { get; set; }

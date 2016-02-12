@@ -8,7 +8,7 @@
     { 
         public Form()
         {
-            this.CreatedOn = DateTime.Now;
+            this.CreatedOn = DateTime.UtcNow;
         }
 
         [Key]
@@ -22,6 +22,6 @@
         [ForeignKey("User")]
         public string UserId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
+        public virtual Adopter User { get; set; }
     }
 }

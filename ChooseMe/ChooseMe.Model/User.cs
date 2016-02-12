@@ -15,7 +15,7 @@
 
         public User()
         {
-            this.CreatedOn = DateTime.Now;
+            this.CreatedOn = DateTime.UtcNow;
             this.messages = new HashSet<Message>();
             this.comments = new HashSet<Comment>();
         }
@@ -23,11 +23,6 @@
         public DateTime CreatedOn { get; set; }
 
         public string ImageURL { get; set; }
-
-        [ForeignKey("Town")]
-        public int TownId { get; set; }
-
-        public virtual Town Town { get; set; }
 
         public virtual ICollection<Message> Messages
         {

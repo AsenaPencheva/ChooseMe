@@ -36,8 +36,6 @@
 
         public virtual IDbSet<Message> Messages { get; set; }
 
-        public virtual IDbSet<Town> Towns { get; set; }
-
         public virtual IDbSet<VolunteerForm> VolunteerForms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

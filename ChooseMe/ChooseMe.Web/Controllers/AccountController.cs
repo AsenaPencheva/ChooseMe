@@ -8,8 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ChooseMe.Web.Models;
 using ChooseMe.Models;
+using ChooseMe.Web.Models.Account;
+using ChooseMe.Common.Constants;
+using System.Web.Security;
 
 namespace ChooseMe.Web.Controllers
 {
@@ -144,20 +146,97 @@ namespace ChooseMe.Web.Controllers
         }
 
         //
-        // POST: /Account/Register
+        // GET: /Account/RegisterAdopter
+        [AllowAnonymous]
+        public ActionResult RegisterAdopter()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/RegisterAdopter
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> RegisterAdopter(RegisterAdopterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                if(model.ImageURL == null)
+                {
+                    model.ImageURL = ControllersConst.DefaultAdopterImage;
+                }
+
+                var user = new Adopter {
+                    UserName = model.FirstName,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    ImageURL = model.ImageURL,
+                    //DateOfBirth = model.DateOfBirth,
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
+                    UserManager.AddToRole(user.Id, ControllersConst.AdopterRole);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        //
+        // GET: /Account/RegisterOrganization
+        [AllowAnonymous]
+        public ActionResult RegisterOrganization()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/RegisterOrganization
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterOrganization(RegisterOrganizationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.ImageURL == null)
+                {
+                    model.ImageURL = ControllersConst.DefaultOrganizationImage;
+                }
+
+                var user = new Organization {
+                    UserName = model.Name,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Description = model.Description,
+                    IsLookingForVolunteers = model.IsLookingForVolunteers,
+                    ImageURL = model.ImageURL,
+                    //DateOfFoundation = model.DateOfFoundation
+                };
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    UserManager.AddToRole(user.Id, ControllersConst.OrganizationRole);
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
