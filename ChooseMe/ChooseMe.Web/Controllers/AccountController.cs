@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using ChooseMe.Models;
 using ChooseMe.Web.Models.Account;
 using ChooseMe.Common.Constants;
+using System.Web.Security;
 
 namespace ChooseMe.Web.Controllers
 {
@@ -176,8 +177,10 @@ namespace ChooseMe.Web.Controllers
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
+                    Roles.AddUserToRole(user.UserName, "Adopter");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -228,9 +231,10 @@ namespace ChooseMe.Web.Controllers
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
-                
+
                 if (result.Succeeded)
                 {
+                    Roles.AddUserToRole(user.UserName, "Organization");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

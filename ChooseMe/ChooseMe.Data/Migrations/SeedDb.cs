@@ -15,19 +15,19 @@
 
         private static void SeedUsers(ChooseMeDbContext context)
         {
+            var userManager = new UserManager<User>(new UserStore<User>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+            //Create Role if it does not exist
+            if (!roleManager.Roles.Any())
+            {
+                roleManager.Create(new IdentityRole("Admin"));
+                roleManager.Create(new IdentityRole("Adopter"));
+                roleManager.Create(new IdentityRole("Organization"));
+            }
+
             if (!context.Users.Any())
             {
-                var userManager = new UserManager<User>(new UserStore<User>(context));
-                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-
-                //Create Role if it does not exist
-                if (!roleManager.Roles.Any())
-                {
-                    roleManager.Create(new IdentityRole("Admin"));
-                    roleManager.Create(new IdentityRole("Adopter"));
-                    roleManager.Create(new IdentityRole("Organization"));
-                }
-
                 CreateNewUser(userManager, roleManager, "Admin", "admin@test.com", "123456");
             }
         }
