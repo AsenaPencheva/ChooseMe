@@ -1,30 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace ChooseMe.Web.Controllers
+﻿namespace ChooseMe.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using AutoMapper.QueryableExtensions;
+
+    using Ninject;
+    using Services.Contracts;
+    using Models.Animal;
+
     public class HomeController : Controller
     {
+        [Inject]
+        public IAnimalService AnimalService { get; set; }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult GetLast5Cats()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var cats = AnimalService.GetLatestCats(5).ProjectTo<LatestAnimalsViewModel>();
+            return this.PartialView("_LatestAnimals", cats);
         }
 
-        public ActionResult Contact()
+        public ActionResult GetLast5Dogs()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var dogs = AnimalService.GetLatestDogs(5).ProjectTo<LatestAnimalsViewModel>();
+            return this.PartialView("_LatestAnimals", dogs);
         }
     }
 }

@@ -38,6 +38,8 @@
 
         public virtual IDbSet<VolunteerForm> VolunteerForms { get; set; }
 
+        public virtual IDbSet<Photo> Photos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -4,13 +4,19 @@
 <div id="homepage-container">
     <div class="jumbotron">
         <h1>Choose Me</h1>
-        <p class="lead">The place where you will meet your new best friend!</p>
+        <p class="lead">Your new best friend is waiting for you!</p>
     </div>
 
     <div class="row">
-        
-    </div>
-    <div class="row">
-
+        <div class="col-md-4 center-block">
+            <div>
+                <h2 class="text-center"><strong>Recently added cats</strong></h2>
+            </div>
+            @Html.Action("GetLast5Cats", "Home", routeValues: new { area = "", count = Model })
+        </div>
+        <div class="col-md-4 pull-right">
+            <h2 class="text-center"><strong>Recently added dogs</strong></h2>
+            @Html.Action("GetLast5Dogs", "Home", routeValues: new { area = "", count = Model })
+        </div>
     </div>
 </div>

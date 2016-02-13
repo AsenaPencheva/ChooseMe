@@ -1,0 +1,23 @@
+﻿@model  IEnumerable<ChooseMe.Web.Models.Animal.LatestAnimalsViewModel>
+
+@foreach (var pet in Model)
+{
+    <div class="table-bordered">
+        <div class="text-center">
+           @Html.DisplayFor(m => pet.Photo, "PetPicture")
+        </div>
+        <div>
+            <h3 class="text-center">
+                <strong>
+                    <a>@pet.Name</a>
+                </strong>
+            </h3>
+        </div>
+       <span class="pull-left">@Html.DisplayFor(m => pet.Gender, "Gender")</span>
+       <span class="pull-right">@Html.DisplayFor(m => pet.AddedOn, "Date")</span>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+}
