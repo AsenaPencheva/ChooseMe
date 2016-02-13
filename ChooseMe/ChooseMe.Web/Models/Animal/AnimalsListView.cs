@@ -7,7 +7,7 @@
     using ChooseMe.Models;
     using System.Linq;
 
-    public class LatestAnimalsViewModel: IMapFrom<Animal>, IHaveCustomMappings
+    public class AnimalsListView: IMapFrom<Animal>, IHaveCustomMappings
     {
         public string Name { get; set; }
 
@@ -17,9 +17,11 @@
 
         public Gender Gender { get; set; }
 
+        public Organization Organization { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<Animal, LatestAnimalsViewModel>()
+            configuration.CreateMap<Animal, AnimalsListView>()
                .ForMember(a => a.Photo, opts => opts.MapFrom(x => x.Photos.FirstOrDefault().Address));
         }
     }

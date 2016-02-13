@@ -6,17 +6,21 @@
         <h1>Choose Me</h1>
         <p class="lead">Your new best friend is waiting for you!</p>
     </div>
-
     <div class="row">
-        <div class="col-md-4 center-block">
-            <div>
-                <h2 class="text-center"><strong>Recently added cats</strong></h2>
+        <div class="col-md-3 pull-left">
+            <br />
+            <h4 class="text-center"><strong>Top Organizations</strong></h4>
+            @Html.Action("GetOrganizationWithMostAnimals", "Home", routeValues: new { area = "", count = Model })
+        </div>
+        <div>
+            <h2 class="text-center"><strong>Recently added</strong></h2>
+            <br />
+            <div class="col-md-4 center-block">
+                @Html.Action("GetLastCats", "Home", routeValues: new { area = "", count = Model })
             </div>
-            @Html.Action("GetLast5Cats", "Home", routeValues: new { area = "", count = Model })
-        </div>
-        <div class="col-md-4 pull-right">
-            <h2 class="text-center"><strong>Recently added dogs</strong></h2>
-            @Html.Action("GetLast5Dogs", "Home", routeValues: new { area = "", count = Model })
-        </div>
+            <div class="col-md-4 pull-right">
+                @Html.Action("GetLastDogs", "Home", routeValues: new { area = "", count = Model })
+            </div>
+         </div>
     </div>
 </div>
