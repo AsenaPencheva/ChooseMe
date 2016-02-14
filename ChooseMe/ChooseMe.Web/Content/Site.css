@@ -1,5 +1,4 @@
 ﻿body {
-    background-image: url("../Images/paws.jpg");
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -22,4 +21,27 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#orgname {
+    vertical-align: middle;
+}
+
+#orgname a{
+    text-decoration: none;
+}
+
+#homepage-container div.jumbotron{
+    background-image: url(../Images/cover.jpg);
+    background-repeat: no-repeat;
+    background-color: gray;
+}
+
+div.navbar{
+    background-image: url(../Images/vintage-green-pattern.jpg);
+    background-color: darkseagreen;
+}
+
+div.navbar-header a.navbar-brand:hover{
+    color:darkseagreen;
 }
