@@ -4,6 +4,7 @@
     using Models.Animal;
     using Ninject;
     using Services.Contracts;
+    using System.Linq;
     using System.Web.Mvc;
 
     public class AnimalsController:Controller
@@ -11,10 +12,15 @@
         [Inject]
         public IAnimalService AnimalService { get; set; }
 
-        public ActionResult All()
+        public ActionResult All(string searchString)
         {
-            var animals = AnimalService.GetAll().ProjectTo<AnimalsListView>();
-            return View(animals);
+            var result = AnimalService.GetAll().ProjectTo<AnimalsListView>();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                result = result
+                .Where(a => a.Name.ToLower().Contains(searchString.ToLower()));
+            }
+            return View(result);
         }
     }
 }

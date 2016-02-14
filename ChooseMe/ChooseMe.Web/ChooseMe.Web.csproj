@@ -237,6 +237,7 @@
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
+    <Content Include="Scripts\App\searchAjaxScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -296,6 +297,8 @@
     <Content Include="Views\Shared\_OrgsMostAnimals.cshtml" />
     <Content Include="Views\Shared\_LatestAnimals.cshtml" />
     <Content Include="Views\Animals\All.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Search.cshtml" />
+    <Content Include="Views\Animals\_AllTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
