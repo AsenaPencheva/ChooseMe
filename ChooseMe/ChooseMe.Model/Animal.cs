@@ -53,6 +53,7 @@
         [Required]
         public bool IsCatsFriendly { get; set; }
 
+        [Required]
         public FurColor FurColor { get; set; }
 
         [Required]

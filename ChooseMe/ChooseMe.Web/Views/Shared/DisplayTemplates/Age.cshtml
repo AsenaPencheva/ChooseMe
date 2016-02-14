@@ -1,0 +1,18 @@
+﻿@model string
+
+@if(Model.Length < 3)
+{
+    var years = int.Parse(Model);
+    if(years == 1)
+    {
+        <h5>Age: <em>1 year</em></h5>
+    }
+    else
+    {
+        <h5>Age: <em>@years.ToString() years</em></h5>
+    }
+}
+else
+{
+    <h5>Age: <em>@Model</em></h5>
+}

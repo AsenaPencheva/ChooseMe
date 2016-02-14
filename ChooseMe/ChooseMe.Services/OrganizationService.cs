@@ -24,7 +24,9 @@
 
         public IQueryable<Organization> GetAll()
         {
-            return this.organization.All();
+            return this.organization
+                .All()
+                .OrderByDescending(o => o.CreatedOn); 
         }
 
         public Organization GetById(string id)

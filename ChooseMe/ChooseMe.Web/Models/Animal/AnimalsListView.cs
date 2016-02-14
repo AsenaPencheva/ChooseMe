@@ -15,14 +15,23 @@
 
         public DateTime AddedOn { get; set; }
 
+        public string Age { get; set; }
+
         public Gender Gender { get; set; }
+
+        public bool IsLonghaired { get; set; }
+
+        public FurColor FurColor { get; set; }
 
         public Organization Organization { get; set; }
 
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Animal, AnimalsListView>()
-               .ForMember(a => a.Photo, opts => opts.MapFrom(x => x.Photos.FirstOrDefault().Address));
+               .ForMember(a => a.Photo, opts => opts.MapFrom(x => x.Photos.FirstOrDefault().Address))
+               .ForMember(a => a.Age, opts => opts.MapFrom(x => DateTime.UtcNow.Year - x.DateOfBirth.Year == 0 ?
+                                                                                            (DateTime.UtcNow.Month - x.DateOfBirth.Month)  + " months"
+                                                                                            : DateTime.UtcNow.Year - x.DateOfBirth.Year + ""));
         }
     }
 }

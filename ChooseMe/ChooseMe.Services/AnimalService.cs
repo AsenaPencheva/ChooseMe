@@ -34,7 +34,9 @@
 
         public IQueryable<Animal> GetAll()
         {
-            return this.animals.All();
+            return this.animals
+                .All()
+                .OrderByDescending(a => a.AddedOn); 
         }
 
         public IQueryable<Animal> GetAllByOrganizationId(string id)

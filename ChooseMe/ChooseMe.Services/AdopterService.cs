@@ -24,7 +24,7 @@
 
         public IQueryable<Adopter> GetAll()
         {
-            return this.adopters.All();
+            return this.adopters.All().OrderByDescending(a => a.CreatedOn);
         }
 
         public Adopter GetById(string id)

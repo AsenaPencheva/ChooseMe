@@ -11,5 +11,7 @@
         public const string OrganizationRole = "Organization";
 
         public const string AdopterRole = "Adopter";
+
+        public const int PageSize = 2;
     }
 }

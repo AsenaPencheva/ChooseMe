@@ -1,19 +1,21 @@
 ﻿namespace ChooseMe.Common.Enums
 {
+    using System.ComponentModel;
+
     public enum FurColor
     {
         White,
         Orange,
-        OrangeAndWhite,
+        OrangeWhite,
         Brown,
-        BrownAndWhite,
+        BrownWhite,
         Tabby,
         Gray,
-        GrayAndWhite,
+        GrayWhite,
         Calico,
         Tortie,
         Black,
-        BlackAndWhite,
+        BlackWhite,
         Mixed
     }
 }
