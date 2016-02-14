@@ -1,6 +1,4 @@
 ﻿@using (Html.BeginForm("All", null, FormMethod.Get))
 {
-    <div class="col-lg-12">
-        @Html.TextBox("SearchString", "", new { @class = "form-control", id = "input-search", name = "searchString", placeholder = "Search by name..." })
-    </div>
+     @Html.TextBox("SearchString", "", new { @class = "form-control", id = "input-search", name = "searchString", placeholder = "Search by name..." })
 }

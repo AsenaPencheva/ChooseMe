@@ -2,10 +2,19 @@
     ViewBag.Title = "All Animals";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2 class="text-primary title">Are you going to bring us home?</h2>
-<div class="row">
-    @Html.EditorFor(m => m, "Search")
- </div>
+<h2 class="text-primary">Are you going to bring us home?</h2>
+<br/>
+<div class="row"  id="search-options">
+    <span class="pull-left">
+        @Html.EditorFor(m => m, "Search")
+    </span>
+    <span class="pull-right">
+        <strong>Sort by: </strong>
+        @Html.ActionLink("Date", "All", new { sortOrder = ViewBag.DateSortParm }, new { @class = "btn btn-danger loading" })
+        @Html.ActionLink("Age", "All", new { sortOrder = ViewBag.AgeSortParm }, new { @class = "btn btn-success loading" })
+        @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm }, new { @class = "btn btn-warning loading" })
+    </span>
+</div>
 <br/>
 <br />
 <div class="row">

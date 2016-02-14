@@ -19,6 +19,8 @@
 
         public Gender Gender { get; set; }
 
+        public DateTime DateOfBirth { get; set; }
+
         public bool IsLonghaired { get; set; }
 
         public FurColor FurColor { get; set; }
