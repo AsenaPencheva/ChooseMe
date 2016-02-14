@@ -47,7 +47,7 @@ ul.navbar-nav li.menu a:hover{
     color:palegreen;
 }
 
-.img-effect:hover {
+ .img-effect>a:hover {
     cursor: pointer;
     border-radius: 0px;
   -webkit-transform: scale(1.2, 1.2);
