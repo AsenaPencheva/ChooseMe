@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ChooseMe.Web.Models.Animal.AnimalsListView>
+
+@{
+    ViewBag.Title = "All Animals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text-primary title">Are you going to bring us home?</h2>
+<div class="col-lg-12">
+    <input type="search" class="form-control" id="input-search" placeholder="Search...">
+</div>
+<br/>
+<br />
+@foreach (var animal in Model)
+{
+    <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
+        <div class="info-block block-info clearfix">
+            <div class="square-box pull-left">
+                @Html.DisplayFor(m => animal.Photo, "PetPicture")
+            </div>
+            <h5 class="text-success">@animal.Organization.Name</h5>
+            <h4>Name:<b>@animal.Name</b></h4>
+            <p>@Html.DisplayFor(m => animal.Gender, "Gender")</p>
+        </div>
+    </div>
+}
