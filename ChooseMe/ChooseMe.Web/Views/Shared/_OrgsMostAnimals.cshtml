@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ChooseMe.Web.Models.Organization.OrganizationListView>
+<table class="table table-striped">
+    <tbody>
+        @foreach (var org in Model)
+        {
+            <tr>
+                <td class="pull-left">
+                    <img src=@org.ImageURL height="50" width="50"/>
+                </td>
+                <td id="orgname">
+                    <a>
+                         @org.Name
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

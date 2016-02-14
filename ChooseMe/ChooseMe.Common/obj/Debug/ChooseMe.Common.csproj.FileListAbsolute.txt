@@ -3,3 +3,5 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\bin\Debug\Choose
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\obj\Debug\ChooseMe.Common.csprojResolveAssemblyReference.cache
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\obj\Debug\ChooseMe.Common.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\obj\Debug\ChooseMe.Common.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\bin\Debug\AutoMapper.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Common\bin\Debug\AutoMapper.xml

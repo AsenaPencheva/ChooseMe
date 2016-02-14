@@ -1,6 +1,5 @@
 ﻿namespace ChooseMe.Models
 {
-    using Common.Constants;
     using Common.Enums;
     using System;
     using System.Collections.Generic;
@@ -14,11 +13,15 @@
 
         private ICollection<AdoptionForm> adoptionForms;
 
+        private ICollection<Photo> photos;
+
         public Animal()
         {
+            this.AddedOn = DateTime.UtcNow;
             this.likes = new HashSet<Like>();
             this.comments = new HashSet<Comment>();
             this.adoptionForms = new HashSet<AdoptionForm>();
+            this.photos = new HashSet<Photo>();
         }
 
         [Key]
@@ -28,12 +31,12 @@
         public AnimalType Type { get; set; }
 
         [Required]
-        [MinLength(5, ErrorMessage = "The name must be at least 5 characters long!")]
+        [MinLength(3, ErrorMessage = "The name must be at least 3 characters long!")]
         public string Name { get; set; }
 
         public Gender Gender { get; set; }
 
-        public string[] Photos { get; set; }
+        public DateTime AddedOn { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 
@@ -86,6 +89,12 @@
         {
             get { return this.adoptionForms; }
             set { this.adoptionForms = value; }
+        }
+
+        public virtual ICollection<Photo> Photos
+        {
+            get { return this.photos; }
+            set { this.photos = value; }
         }
     }
 }
