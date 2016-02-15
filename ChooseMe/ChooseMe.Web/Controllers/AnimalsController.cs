@@ -17,6 +17,7 @@
         public ActionResult All(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
+
             if (searchString != null)
             {
                 page = 1;

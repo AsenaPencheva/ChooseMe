@@ -10,9 +10,9 @@
     </span>
     <span class="pull-right">
         <strong>Sort by: </strong>
-        @Html.ActionLink("Date", "All", new { sortOrder = ViewBag.DateSortParm }, new { @class = "btn btn-danger loading" })
-        @Html.ActionLink("Age", "All", new { sortOrder = ViewBag.AgeSortParm }, new { @class = "btn btn-success loading" })
-        @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm }, new { @class = "btn btn-warning loading" })
+        @Html.ActionLink("Date", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "btn btn-danger loading" })
+        @Html.ActionLink("Age", "All", new { sortOrder = ViewBag.AgeSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "btn btn-success loading" })
+        @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "btn btn-warning loading" })
     </span>
 </div>
 <br/>
