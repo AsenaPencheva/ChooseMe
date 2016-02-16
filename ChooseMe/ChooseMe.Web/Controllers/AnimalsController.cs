@@ -11,6 +11,7 @@
     using System;
     using Common.Enums;
     using System.Net;
+
     public class AnimalsController:Controller
     {
         [Inject]

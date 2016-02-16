@@ -209,6 +209,7 @@
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,7 +229,7 @@
     <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Organization\OrganizationListView.cs" />
+    <Compile Include="Models\Organization\OrganizationsListView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -244,7 +245,6 @@
     <Content Include="Images\female.gif" />
     <Content Include="Images\male.gif" />
     <Content Include="Images\paw-prints.jpg" />
-    <Content Include="Images\paws.jpeg" />
     <Content Include="Images\petPicture.jpg" />
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
@@ -317,6 +317,10 @@
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnimalLabels.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Disease.cshtml" />
+    <Content Include="Views\Organizations\All.cshtml" />
+    <Content Include="Views\Organizations\_AllTable.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Check.cshtml" />
+    <Content Include="Views\Organizations\_Paging.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,7 +333,6 @@
     <Folder Include="Areas\Organization\Controllers\" />
     <Folder Include="Areas\Organization\Models\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
-    <Folder Include="Views\Organizations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

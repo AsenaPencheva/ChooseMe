@@ -38,7 +38,7 @@
 
         public ActionResult GetOrganizationWithMostAnimals()
         {
-            var orgs = OrganizationService.OrganizationWithMostAnimals(10).ProjectTo<OrganizationListView>();
+            var orgs = OrganizationService.OrganizationWithMostAnimals(10).ProjectTo<OrganizationsListView>();
             return this.PartialView("_OrgsMostAnimals", orgs);
         }
     }

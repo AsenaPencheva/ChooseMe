@@ -21,8 +21,6 @@
         [MinLength(5, ErrorMessage="Organization name must be at leasr 5 characters long")]
         public string Name { get; set; }
 
-        //public DateTime ActiveSince { get; set; }
-
         public string Description { get; set; }
 
         [Required]

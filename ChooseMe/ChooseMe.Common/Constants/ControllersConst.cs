@@ -13,5 +13,7 @@
         public const string AdopterRole = "Adopter";
 
         public const int PageSize = 2;
+
+        public const int PageSizeOrg = 5;
     }
 }
