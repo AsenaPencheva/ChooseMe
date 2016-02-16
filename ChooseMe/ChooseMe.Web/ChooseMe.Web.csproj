@@ -246,7 +246,6 @@
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
-    <Content Include="Scripts\App\dropdown.js" />
     <Content Include="Scripts\App\searchAjaxScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

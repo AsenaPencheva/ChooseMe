@@ -8,22 +8,7 @@
 <br/>
 <div class="row"  id="search-options">
     <span class="pull-left">
-        @Html.EditorFor(m => m, "Search")
-    </span>
-    <span>
-     @Html.DropDownListFor(
-    model => model.FirstOrDefault().FurColor,
-    Enum.GetNames(typeof(FurColor))
-        .Select(e => new SelectListItem { Text = e }),
-    "-- Select a pattern--",
-    new { @class = "form-control", @id= "color-drop" })
-
-        @Html.DropDownListFor(
-    model => model.FirstOrDefault().Type,
-    Enum.GetNames(typeof(AnimalType))
-        .Select(e => new SelectListItem { Text = e }),
-    "-- Dog or Cat --",
-    new { @class = "form-control", @id = "specie-drop" })
+       @Html.EditorFor(m => m, "Search")
     </span>
     <span class="pull-right">
         <strong>Sort by: </strong>
@@ -32,6 +17,30 @@
         @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter, furColorFilter = ViewBag.CurrentFur, type = ViewBag.Type }, new { @class = "btn btn-warning loading" })
     </span>
 </div>
+<div class="row dropdown">
+    <button class="btn btn-success loading dropdown-toggle" type="button" data-toggle="dropdown">
+        @if(ViewBag.Type != null)
+        {
+            @ViewBag.Type<span>s</span>
+        }
+        else
+        {
+            <span>Dog or Cat</span>
+        }
+        <span class="caret"></span>
+    </button>
+    <ul class="pull-left dropdown-menu">
+        <li>
+            @Html.ActionLink("Dog", "All", new { type = "Dog", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </li>
+        <li>
+            @Html.ActionLink("Cat", "All", new { type = "Cat", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </li>
+        <li>
+            @Html.ActionLink("Both", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </li>
+    </ul>
+</div>
 <br/>
 <br />
 <div class="row">
@@ -39,20 +48,3 @@
     <div id="ajax-search-results"></div>
     @Html.Partial("_Paging")
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script>
-    $('#color-drop').change(function () {
-        if ($("#color-drop option:selected").text() === '-- Select a pattern--') {
-            window.location.href = '/Animals/All';
-        } else {
-            window.location.href = '/Animals/All?furColorFilter=' + $("#color-drop option:selected").text();
-        }
-    });
-    $('#specie-drop').change(function () {
-        if ($("#specie-drop option:selected").text() === '-- Dog or Cat --') {
-            window.location.href = '/Animals/All';
-        } else {
-            window.location.href = '/Animals/All?type=' + $("#specie-drop option:selected").text();
-        }
-    });
-</script>

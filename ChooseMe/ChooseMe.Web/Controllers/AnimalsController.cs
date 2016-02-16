@@ -9,15 +9,15 @@
     using PagedList;
     using Common.Constants;
     using System;
+    using Common.Enums;
     public class AnimalsController:Controller
     {
         [Inject]
         public IAnimalService AnimalService { get; set; }
 
-        public ActionResult All(string sortOrder, string currentFilter, string searchString, string furColorFilter, string type, int? page)
+        public ActionResult All(string sortOrder, string currentFilter, string searchString, string type, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.CurrentFur = furColorFilter;
             ViewBag.Type = type;
 
             if (searchString != null)
@@ -42,21 +42,24 @@
             int pageNumber = (page ?? 1);
 
             var sorted = this.Sorted(result, sortOrder);
-            var filtered = this.Filtered(sorted, furColorFilter, type);
+            var filtered = this.Filtered(sorted, type);
             return View(filtered.ToPagedList(pageNumber, ControllersConst.PageSize));
         }
-        private IQueryable<AnimalsListView> Filtered(IQueryable<AnimalsListView> all, string furColor, string type)
+        private IQueryable<AnimalsListView> Filtered(IQueryable<AnimalsListView> all, string type)
         {
             var filteredAnimals = all;
 
-            if(furColor != null)
+            switch (type)
             {
-                filteredAnimals = filteredAnimals.Where(a => a.FurColor.ToString() == furColor);
-            }
-
-            if(type != null)
-            {
-                filteredAnimals = filteredAnimals.Where(a => a.Type.ToString() == type);
+                case "Dog":
+                    filteredAnimals = filteredAnimals.Where(a => a.Type == AnimalType.Dog);
+                    break;
+                case "Cat":
+                    filteredAnimals = filteredAnimals.Where(a => a.Type == AnimalType.Cat);
+                    break;
+                case "Both":
+                default:
+                    break;
             }
 
             return filteredAnimals;
