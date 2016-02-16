@@ -5,7 +5,6 @@
     {
         <div class="text-center"><h2>No results found!</h2></div>
     }
-
         @foreach (var animal in Model)
         {
             <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
@@ -14,7 +13,7 @@
                         @Html.DisplayFor(m => animal.Photo, "PetPicture")
                     </div>
                     <h5 class="text-success">@animal.Organization.Name</h5>
-                    <h4>Name:<b>@animal.Name</b></h4>
+                    <h4>Name:<b><a href="~/Animals/Details/@animal.Id">@animal.Name</a></b></h4>
                     @Html.DisplayFor(m => animal.Age, "Age")
                     <h5>
                         Color: <em>@animal.FurColor</em>

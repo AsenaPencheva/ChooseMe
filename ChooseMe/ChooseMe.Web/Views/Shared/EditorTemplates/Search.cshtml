@@ -1,4 +1,7 @@
 ﻿@using (Html.BeginForm("All", null, FormMethod.Get))
 {
-     @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", id = "input-search", name = "searchString", placeholder = "Search by name..." })
+    <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-search"></i>
+             @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", id = "input-search", name = "searchString", placeholder = "Search by name..." })
+        </div>
 }

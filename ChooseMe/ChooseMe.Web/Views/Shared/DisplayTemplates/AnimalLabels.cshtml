@@ -1,0 +1,32 @@
+﻿@model ChooseMe.Web.Models.Animal.AnimalDetailView
+<div class="row">
+    @if (Model.IsKidsFriendly)
+    {
+        <span class="label label-info tags">Kids friendly</span>
+    }
+
+    @if (Model.IsCatsFriendly)
+    {
+        <span class="label label-success tags">Cats friendly</span>
+    }
+
+    @if (Model.IsDogsFriendly)
+    {
+        <span class="label label-danger tags">Dogs friendly</span>
+    }
+
+    @if (Model.IsVaccinated)
+    {
+        <span class="label label-primary tags">Vaccinated</span>
+    }
+
+    @if (Model.IsChipped)
+    {
+        <span class="label label-warning tags">Chipped</span>
+    }
+
+    @if (Model.IsCastraited)
+    {
+        <span class="label label-default tags">Castraited</span>
+    }
+</div>

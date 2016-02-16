@@ -34,10 +34,12 @@
         [MinLength(3, ErrorMessage = "The name must be at least 3 characters long!")]
         public string Name { get; set; }
 
+        [Required]
         public Gender Gender { get; set; }
 
         public DateTime AddedOn { get; set; }
 
+        [Required]
         public DateTime DateOfBirth { get; set; }
 
         public string Story { get; set; }
@@ -67,10 +69,10 @@
 
         [Required]
         public bool IsChipped { get; set; }
-
+        
         [Required]
         [ForeignKey("Organization")]
-        public string OrganizationId { get; set; }
+        public virtual string OrganizationId { get; set; }
 
         public virtual Organization Organization { get; set; }
 

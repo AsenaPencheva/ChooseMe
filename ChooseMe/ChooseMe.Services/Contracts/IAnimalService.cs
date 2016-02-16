@@ -17,7 +17,7 @@
 
         IQueryable<Animal> GetAllByOrganizationId(string id);
 
-        Animal GetById(int id);
+        IQueryable<Animal> GetById(int id);
 
         Animal AddNew(Animal animal);
 

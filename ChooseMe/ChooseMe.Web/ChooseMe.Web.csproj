@@ -225,6 +225,7 @@
     <Compile Include="Models\Account\SendCodeViewModel.cs" />
     <Compile Include="Models\Account\UserViewModel.cs" />
     <Compile Include="Models\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Organization\OrganizationListView.cs" />
@@ -242,6 +243,8 @@
     <Content Include="Images\cover.jpg" />
     <Content Include="Images\female.gif" />
     <Content Include="Images\male.gif" />
+    <Content Include="Images\paw-prints.jpg" />
+    <Content Include="Images\paws.jpeg" />
     <Content Include="Images\petPicture.jpg" />
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
@@ -311,6 +314,9 @@
     <Content Include="Views\Shared\DisplayTemplates\IsLonghaired.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Age.cshtml" />
     <Content Include="Views\Animals\_Paging.cshtml" />
+    <Content Include="Views\Animals\Details.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\AnimalLabels.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Disease.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

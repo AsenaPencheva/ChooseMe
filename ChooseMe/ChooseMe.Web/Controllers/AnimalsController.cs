@@ -10,11 +10,13 @@
     using Common.Constants;
     using System;
     using Common.Enums;
+    using System.Net;
     public class AnimalsController:Controller
     {
         [Inject]
         public IAnimalService AnimalService { get; set; }
 
+        [HttpGet]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, string type, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -45,6 +47,23 @@
             var filtered = this.Filtered(sorted, type);
             return View(filtered.ToPagedList(pageNumber, ControllersConst.PageSize));
         }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var animal = AnimalService
+                .GetById(id)
+                .ProjectTo<AnimalDetailView>()
+                .FirstOrDefault();
+
+            if (animal == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Not Found");
+            }
+
+            return View(animal);
+        }
+
         private IQueryable<AnimalsListView> Filtered(IQueryable<AnimalsListView> all, string type)
         {
             var filteredAnimals = all;
