@@ -49,7 +49,6 @@
     <Compile Include="Constants\ModelsConst.cs" />
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Enums\AnimalType.cs" />
-    <Compile Include="Enums\CountriesEnum.cs" />
     <Compile Include="Enums\FurColor.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\GodparentType.cs" />

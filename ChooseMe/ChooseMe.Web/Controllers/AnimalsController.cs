@@ -14,9 +14,11 @@
         [Inject]
         public IAnimalService AnimalService { get; set; }
 
-        public ActionResult All(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult All(string sortOrder, string currentFilter, string searchString, string furColorFilter, string type, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
+            ViewBag.CurrentFur = furColorFilter;
+            ViewBag.Type = type;
 
             if (searchString != null)
             {
@@ -40,8 +42,24 @@
             int pageNumber = (page ?? 1);
 
             var sorted = this.Sorted(result, sortOrder);
+            var filtered = this.Filtered(sorted, furColorFilter, type);
+            return View(filtered.ToPagedList(pageNumber, ControllersConst.PageSize));
+        }
+        private IQueryable<AnimalsListView> Filtered(IQueryable<AnimalsListView> all, string furColor, string type)
+        {
+            var filteredAnimals = all;
 
-            return View(sorted.ToPagedList(pageNumber, ControllersConst.PageSize));
+            if(furColor != null)
+            {
+                filteredAnimals = filteredAnimals.Where(a => a.FurColor.ToString() == furColor);
+            }
+
+            if(type != null)
+            {
+                filteredAnimals = filteredAnimals.Where(a => a.Type.ToString() == type);
+            }
+
+            return filteredAnimals;
         }
 
         private IQueryable<AnimalsListView> Sorted(IQueryable<AnimalsListView> all, string sortOrder)

@@ -15,6 +15,8 @@
 
         public DateTime AddedOn { get; set; }
 
+        public AnimalType Type { get; set; }
+
         public string Age { get; set; }
 
         public Gender Gender { get; set; }
