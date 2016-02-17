@@ -168,12 +168,11 @@ namespace ChooseMe.Web.Controllers
                 }
 
                 var user = new Adopter {
-                    UserName = model.FirstName,
+                    UserName = model.UserName,
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     ImageURL = model.ImageURL,
-                    //DateOfBirth = model.DateOfBirth,
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -221,7 +220,7 @@ namespace ChooseMe.Web.Controllers
                 }
 
                 var user = new Organization {
-                    UserName = model.Name,
+                    UserName = model.UserName,
                     Email = model.Email,
                     Name = model.Name,
                     Description = model.Description,
