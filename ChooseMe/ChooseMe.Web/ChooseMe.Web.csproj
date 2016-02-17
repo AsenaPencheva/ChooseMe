@@ -198,6 +198,7 @@
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -294,6 +295,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
     <Content Include="Views\Shared\_OrgsMostAnimals.cshtml" />
     <Content Include="Views\Shared\_LatestAnimals.cshtml" />
+    <Content Include="Views\Animals\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +308,7 @@
     <Folder Include="Areas\Organization\Controllers\" />
     <Folder Include="Areas\Organization\Models\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
+    <Folder Include="Views\Organizations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

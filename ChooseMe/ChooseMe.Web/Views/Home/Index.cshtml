@@ -15,10 +15,10 @@
         <div>
             <h2 class="text-center"><strong>Recently added</strong></h2>
             <br />
-            <div class="col-md-4 center-block">
+            <div class="col-md-4 center-block" class="container-box">
                 @Html.Action("GetLastCats", "Home", routeValues: new { area = "", count = Model })
             </div>
-            <div class="col-md-4 pull-right">
+            <div class="col-md-4 pull-right" class="container-box">
                 @Html.Action("GetLastDogs", "Home", routeValues: new { area = "", count = Model })
             </div>
          </div>
