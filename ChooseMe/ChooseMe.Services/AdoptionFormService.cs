@@ -36,7 +36,8 @@
         {
             return this.adoptionForms
                 .All()
-                .Where(af => af.AnimalId == id);
+                .Where(af => af.AnimalId == id)
+                .OrderByDescending(af => af.CreatedOn);
         }
 
         public AdoptionForm GetById(int id)

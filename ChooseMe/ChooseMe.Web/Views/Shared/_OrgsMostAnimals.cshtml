@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ChooseMe.Web.Models.Organization.OrganizationListView>
+﻿@model IEnumerable<ChooseMe.Web.Models.Organization.OrganizationsListView>
 <table class="table table-striped">
     <tbody>
         @foreach (var org in Model)
@@ -8,7 +8,7 @@
                     <img src=@org.ImageURL height="50" width="50"/>
                 </td>
                 <td id="orgname">
-                    <a>
+                    <a href="~/Organizations/Details/@org.Id">
                          @org.Name
                     </a>
                 </td>

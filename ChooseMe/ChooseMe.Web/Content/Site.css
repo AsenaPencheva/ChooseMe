@@ -43,11 +43,14 @@ div.navbar{
 }
 
 div.navbar-header a.navbar-brand:hover,
-ul.navbar-nav li.menu a:hover{
-    color:palegreen;
+ul.navbar-nav li.menu a:hover,
+a#loginLink:hover,
+a#registerLink:hover,
+a#logoutForm:hover{
+    color:#18da7d;
 }
 
- .img-effect>a:hover {
+ .img-effect:hover {
     cursor: pointer;
     border-radius: 0px;
   -webkit-transform: scale(1.2, 1.2);
@@ -85,4 +88,44 @@ div.container-box {
 }
 .info-block:hover .info-block.block-info {
     border-color:#20819e
+}
+
+/*Author: Kosmom.ru*/.loading,.loading>td,.loading>th,.nav li.loading.active>a,.pagination li.loading,.pagination>li.active.loading>a,.pager>li.loading>a{
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+    background-size: 40px 40px;
+animation: 2s linear 0s normal none infinite progress-bar-stripes;
+-webkit-animation: progress-bar-stripes 2s linear infinite;
+}
+.btn.btn-default.loading,input[type="text"].loading,select.loading,textarea.loading,.well.loading,.list-group-item.loading,.pagination>li.active.loading>a,.pager>li.loading>a{
+background-image: linear-gradient(45deg, rgba(235, 235, 235, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(235, 235, 235, 0.15) 50%, rgba(235, 235, 235, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+div.well.panel.panel-default{
+    background-image: url(../Images/paw-prints.jpg);
+    width: 1100px;
+    height: 500px;
+}
+
+a.panel-link{
+    color:white !important;
 }

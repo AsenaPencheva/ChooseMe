@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ChooseMe.Web.Models.Organization.OrganizationsListView>
+
+<table class="table table-striped text-center">
+    <thead>
+        <th class="text-center">
+            Image
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter})
+        </th>
+        <th class="text-center">
+            Email
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Looking for volunteers", "All", new { sortOrder = ViewBag.LookingVolunteersSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Number of animals", "All", new { sortOrder = ViewBag.NumberAnimalsSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+    </thead>
+    @foreach(var org in Model)
+    {
+        <tr>
+            <td>
+                <img src=@org.ImageURL height="50px" width="50px"/>
+            </td>
+            <td>
+                <a href="~/Organizations/Details/@org.Id">@org.Name</a>
+            </td>
+            <td>
+                @org.Email
+            </td>
+            <td>
+                @Html.DisplayFor(m => org.IsLookingForVolunteers, "Check")
+            </td>
+            <td>
+                @org.AnimalsNumber
+            </td>
+        </tr>
+    }
+</table>

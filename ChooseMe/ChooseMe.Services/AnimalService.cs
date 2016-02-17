@@ -6,6 +6,7 @@
     using ChooseMe.Services.Contracts;
     using Data.Repositories;
     using Common.Enums;
+
     public class AnimalService: IAnimalService
     {
         private readonly IRepository<Animal> animals;
@@ -34,7 +35,9 @@
 
         public IQueryable<Animal> GetAll()
         {
-            return this.animals.All();
+            return this.animals
+                .All()
+                .OrderByDescending(a => a.AddedOn);
         }
 
         public IQueryable<Animal> GetAllByOrganizationId(string id)
@@ -58,12 +61,11 @@
                  .Where(a => a.Type == AnimalType.Dog);
         }
 
-        public Animal GetById(int id)
+        public IQueryable<Animal> GetById(int id)
         {
             return this.animals
                 .All()
-                .Where(a => a.Id == id)
-                .FirstOrDefault();
+                .Where(a => a.Id == id);
         }
 
         public IQueryable<Animal> GetLatestCats(int number)

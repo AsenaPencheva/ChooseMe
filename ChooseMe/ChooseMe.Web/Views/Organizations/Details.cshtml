@@ -1,0 +1,36 @@
+﻿@model ChooseMe.Web.Models.Organization.OrganizationDetailView
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <br />
+    <img src=@Model.ImageURL class="img-rounded" height="300px" width="300px"/>
+</div>
+<h2 class="text-center">@Model.Name</h2>
+<div class="text-center">Email: <em>@Model.Email</em></div>
+<br/>
+    @if (Model.IsLookingForVolunteers)
+    {
+        <label class="label label-success text-center">
+            Looking for volunters <span class="glyphicon glyphicon-hand-up"></span>
+        </label>
+    } 
+<div class="jumbotron">@Model.Description</div>
+<div class="row">
+    @foreach (var animal in Model.Animals)
+    {
+        <div class="col-sm-3">
+            <a href="~/Animals/Details/@animal.Id" class="panel-link">
+                <div class="panel panel-success">
+                    <div class="panel-heading text-center">@animal.Name
+            </div>
+                <div class="panel-body">
+                    @Html.DisplayFor(m => animal.Photo, "ThumbnailPetPicture")
+                </div>
+            </div>
+                </a>
+        </div>
+    }
+</div>

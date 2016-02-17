@@ -34,7 +34,8 @@
         {
           return this.volunteerForms
                 .All()
-                .Where(f => f.OrganizationId == id);
+                .Where(f => f.OrganizationId == id)
+                .OrderByDescending(vf => vf.CreatedOn); 
         }
 
         public VolunteerForm GetById(int id)

@@ -1,0 +1,62 @@
+﻿@model ChooseMe.Web.Models.Animal.AnimalDetailView
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Details</h2>
+
+<div class="container details-container">
+    <div class="row">
+        <div class="col-md-8 col-xs-10">
+            <div class="well panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            @Html.DisplayFor(m => m.Photos.FirstOrDefault().Address, "PetPicture") 
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-8">
+                            <em>@Model.Organization.Name</em>
+                            <h2>@Model.Name</h2>
+                            <h5><em>@Model.Type</em>@Html.DisplayFor(m => m.Gender, "Gender")</h5>
+                            <p>@Model.Story</p>
+                            <p>@Html.DisplayFor(m => m.Disease, "Disease")</p>
+                            <p><em>@Html.DisplayFor(m => m.Age, "Age")</em></p>
+                            <p>Fur: @Model.FurColor <em>@Html.DisplayFor(m => m.IsLonghaired, "IsLonghaired")</em></p>
+                            <p>
+                                @Html.DisplayFor(m => m, "AnimalLabels")
+                            </p>
+                        </div>
+                        <!--/col-->
+                        <div class="clearfix"></div>
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <h2><strong>@Model.AdoptionForms.Count()</strong></h2>
+                            <p><small>Adoption Forms</small></p>
+                            <button class="btn btn-success btn-block"><span class="glyphicon glyphicon-heart"></span> Adoption Forms</button>
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <h2><strong>@Model.Comments.Count()</strong></h2>
+                            <p><small>Comments</small></p>
+                            <button class="btn btn-info btn-block"><span class="glyphicon glyphicon-pencil"></span> Comments</button>
+                        </div>
+                        <!--/col-->
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <h2><strong>@Model.Photos.Count()</strong></h2>
+                            <p><small>Photos</small></p>
+                            <button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-folder-open"></span> Photos</button>
+                        </div>
+                        <!--/col-->
+                    </div>
+                    <!--/row-->
+                </div>
+                <!--/panel-body-->
+            </div>
+            <!--/panel-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

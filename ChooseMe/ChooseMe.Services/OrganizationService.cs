@@ -24,15 +24,16 @@
 
         public IQueryable<Organization> GetAll()
         {
-            return this.organization.All();
+            return this.organization
+                .All()
+                .OrderByDescending(o => o.CreatedOn); 
         }
 
-        public Organization GetById(string id)
+        public IQueryable<Organization> GetById(string id)
         {
             return this.organization
                 .All()
-                .Where(o => o.Id == id)
-                .FirstOrDefault();
+                .Where(o => o.Id == id);
         }
 
         public IQueryable<Organization> UpdateOrganization(Organization updatedOrganization)

@@ -86,3 +86,7 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Ninject.Extensi
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Ninject.Web.Common.xml
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Ninject.Web.Mvc.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Ninject.Web.Mvc.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\PagedList.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\PagedList.Mvc.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\PagedList.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\PagedList.Mvc.xml

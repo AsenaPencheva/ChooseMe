@@ -227,7 +227,6 @@ namespace ChooseMe.Web.Controllers
                     Description = model.Description,
                     IsLookingForVolunteers = model.IsLookingForVolunteers,
                     ImageURL = model.ImageURL,
-                    //DateOfFoundation = model.DateOfFoundation
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
