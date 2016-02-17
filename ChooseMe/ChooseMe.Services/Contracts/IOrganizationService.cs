@@ -7,7 +7,7 @@
     {
         IQueryable<Organization> GetAll();
 
-        Organization GetById(string id);
+        IQueryable<Organization> GetById(string id);
 
         IQueryable<Organization> UpdateOrganization(Organization updatedOrganization);
 

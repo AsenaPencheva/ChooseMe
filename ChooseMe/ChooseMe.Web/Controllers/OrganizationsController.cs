@@ -48,6 +48,12 @@
             return View(sorted.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
+        public ActionResult Details(string id)
+        {
+            var organization = OrganizationService.GetById(id).ProjectTo<OrganizationDetailView>().FirstOrDefault();
+            return View(organization);
+        }
+
         private IQueryable<OrganizationsListView> Sorted(IQueryable<OrganizationsListView> all, string sortOrder)
         {
             ViewBag.NumberAnimalsSortParm = sortOrder == "NAnimals" ? "nanimals":"NAnimals";
