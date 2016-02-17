@@ -14,8 +14,12 @@
 
     public class AnimalsController:Controller
     {
-        [Inject]
-        public IAnimalService AnimalService { get; set; }
+        private IAnimalService animals;
+
+        public AnimalsController(IAnimalService animals)
+        {
+            this.animals = animals;
+        }
 
         [HttpGet]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, string type, int? page)
@@ -34,7 +38,7 @@
 
             ViewBag.CurrentFilter = searchString;
 
-            var result = AnimalService.GetAll().ProjectTo<AnimalsListView>();
+            var result = animals.GetAll().ProjectTo<AnimalsListView>();
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -52,7 +56,7 @@
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var animal = AnimalService
+            var animal = animals
                 .GetById(id)
                 .ProjectTo<AnimalDetailView>()
                 .FirstOrDefault();

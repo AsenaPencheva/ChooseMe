@@ -15,5 +15,9 @@
         public const int PageSize = 2;
 
         public const int PageSizeOrg = 5;
+
+        public const int TopAnimalsNumber = 5;
+
+        public const int TopOrganizationsNumber = 10;
     }
 }

@@ -206,6 +206,7 @@
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdoptersController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -226,6 +227,7 @@
     <Compile Include="Models\Account\SendCodeViewModel.cs" />
     <Compile Include="Models\Account\UserViewModel.cs" />
     <Compile Include="Models\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="Models\Adopter\AdopterDetailView.cs" />
     <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -324,6 +326,7 @@
     <Content Include="Views\Organizations\_Paging.cshtml" />
     <Content Include="Views\Organizations\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ThumbnailPetPicture.cshtml" />
+    <Content Include="Views\Adopters\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

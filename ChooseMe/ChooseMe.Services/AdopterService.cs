@@ -6,7 +6,7 @@
     using ChooseMe.Services.Contracts;
     using Data.Repositories;
 
-    class AdopterService : IAdopterService
+    public class AdopterService : IAdopterService
     {
         private readonly IRepository<Adopter> adopters;
 
@@ -27,14 +27,6 @@
             return this.adopters.All().OrderByDescending(a => a.CreatedOn);
         }
 
-        public Adopter GetById(string id)
-        {
-            return this.adopters
-                .All()
-                .Where(a => a.Id == id)
-                .FirstOrDefault();
-        }
-
         public IQueryable<Adopter> UpdateAdopter(Adopter updatedAdopter)
         {
             this.adopters.Update(updatedAdopter);
@@ -43,6 +35,13 @@
             return this.adopters
                 .All()
                 .Where(r => r.Id == updatedAdopter.Id);
+        }
+
+        public IQueryable<Adopter> GetById(string id)
+        {
+            return this.adopters
+                .All()
+                .Where(a => a.Id == id);
         }
     }
 }

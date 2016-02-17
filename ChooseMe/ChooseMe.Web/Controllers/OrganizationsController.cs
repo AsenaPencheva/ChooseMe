@@ -13,8 +13,12 @@
 
     public class OrganizationsController:Controller
     {
-        [Inject]
-        public IOrganizationService OrganizationService { get; set; }
+        private IOrganizationService organizations;
+
+        public OrganizationsController(IOrganizationService organizations)
+        {
+            this.organizations = organizations;
+        }
 
         [HttpGet]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, int? page)
@@ -32,25 +36,25 @@
 
             ViewBag.CurrentFilter = searchString;
 
-            var organizations = OrganizationService
+            var organizationsAll = organizations
                 .GetAll()
                 .ProjectTo<OrganizationsListView>();
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                organizations = organizations
+                organizationsAll = organizationsAll
                 .Where(a => a.Name.ToLower().Contains(searchString.ToLower()));
             }
 
             int pageNumber = (page ?? 1);
-            var sorted = this.Sorted(organizations, sortOrder);
+            var sorted = this.Sorted(organizationsAll, sortOrder);
 
             return View(sorted.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
         public ActionResult Details(string id)
         {
-            var organization = OrganizationService.GetById(id).ProjectTo<OrganizationDetailView>().FirstOrDefault();
+            var organization = organizations.GetById(id).ProjectTo<OrganizationDetailView>().FirstOrDefault();
             return View(organization);
         }
 

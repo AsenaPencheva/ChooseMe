@@ -7,7 +7,7 @@
     {
         IQueryable<Adopter> GetAll();
 
-        Adopter GetById(string id);
+        IQueryable<Adopter> GetById(string id);
 
         IQueryable<Adopter> UpdateAdopter(Adopter updatedAdopter);
 

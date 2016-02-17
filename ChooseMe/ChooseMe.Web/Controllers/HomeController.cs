@@ -11,13 +11,18 @@
     using Services.Contracts;
     using Models.Animal;
     using Models.Organization;
+    using Common.Constants;
     public class HomeController : Controller
     {
-        [Inject]
-        public IAnimalService AnimalService { get; set; }
+        private IAnimalService animals;
 
-        [Inject]
-        public IOrganizationService OrganizationService { get; set; }
+        private IOrganizationService organizations;
+
+        public HomeController(IAnimalService animals, IOrganizationService organizations)
+        {
+            this.animals = animals;
+            this.organizations = organizations;
+        }
 
         public ActionResult Index()
         {
@@ -26,19 +31,19 @@
 
         public ActionResult GetLastCats()
         {
-            var cats = AnimalService.GetLatestCats(5).ProjectTo<AnimalsListView>();
+            var cats = animals.GetLatestCats(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>();
             return this.PartialView("_LatestAnimals", cats);
         }
 
         public ActionResult GetLastDogs()
         {
-            var dogs = AnimalService.GetLatestDogs(5).ProjectTo<AnimalsListView>();
+            var dogs = animals.GetLatestDogs(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>();
             return this.PartialView("_LatestAnimals", dogs);
         }
 
         public ActionResult GetOrganizationWithMostAnimals()
         {
-            var orgs = OrganizationService.OrganizationWithMostAnimals(10).ProjectTo<OrganizationsListView>();
+            var orgs = organizations.OrganizationWithMostAnimals(ControllersConst.TopOrganizationsNumber).ProjectTo<OrganizationsListView>();
             return this.PartialView("_OrgsMostAnimals", orgs);
         }
     }
