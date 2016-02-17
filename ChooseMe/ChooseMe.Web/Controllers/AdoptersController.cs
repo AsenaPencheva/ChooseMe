@@ -16,6 +16,7 @@
             this.adopters = adopters;
         }
 
+        [Authorize]
         public ActionResult Details(string id)
         {
             var adopter = adopters.GetById(id)

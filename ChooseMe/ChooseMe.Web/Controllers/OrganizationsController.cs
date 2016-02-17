@@ -21,6 +21,7 @@
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -52,6 +53,8 @@
             return View(sorted.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
+        [HttpGet]
+        [Authorize]
         public ActionResult Details(string id)
         {
             var organization = organizations.GetById(id).ProjectTo<OrganizationDetailView>().FirstOrDefault();

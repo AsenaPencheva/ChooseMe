@@ -6,7 +6,7 @@
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "First name Organization name")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Required]
