@@ -1,0 +1,22 @@
+﻿@model ChooseMe.Web.Areas.Organization.Models.Animal.CreateViewModel
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+@using (Html.BeginForm("Upload", "Animal", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="form-group">
+    <div class="col-md-10">
+        @Html.LabelFor(m => m.Files, new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(m => m.Files, new { type = "file", multiple = "multiple" })
+    </div>
+</div>
+<input type="submit" value="Upload" class="btn btn-success" />
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

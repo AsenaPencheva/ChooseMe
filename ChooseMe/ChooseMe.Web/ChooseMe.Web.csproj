@@ -204,6 +204,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
+    <Compile Include="Areas\Organization\Controllers\AnimalController.cs" />
+    <Compile Include="Areas\Organization\Models\Animal\CreateViewModel.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptersController.cs" />
@@ -258,6 +260,11 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Adopter\Views\web.config" />
     <Content Include="Areas\Organization\Views\web.config" />
+    <Content Include="Areas\Organization\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Adopter\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\Create.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\Upload.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -336,8 +343,6 @@
     <Folder Include="Areas\Adopter\Controllers\" />
     <Folder Include="Areas\Adopter\Models\" />
     <Folder Include="Areas\Adopter\Views\Shared\" />
-    <Folder Include="Areas\Organization\Controllers\" />
-    <Folder Include="Areas\Organization\Models\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
