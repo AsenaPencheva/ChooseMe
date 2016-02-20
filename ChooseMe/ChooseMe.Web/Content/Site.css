@@ -129,3 +129,16 @@ div.well.panel.panel-default{
 a.panel-link{
     color:white !important;
 }
+div#create-page{
+   background-image: url("../Images/cats-meow_1250010i.jpg");
+}
+
+form#create{
+     padding-left: 27%;
+     width:970px;
+}
+
+form#create input.btn{
+     width:1000px;
+     margin-right:15%;
+}

@@ -24,10 +24,10 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                     <li class="menu">
-                        @Html.ActionLink("We're looking for home", "All", "Animals")
+                        @Html.ActionLink("We're looking for home", "All", "Animals", new { area = "" }, null)
                     </li>
                     <li class="menu">
-                        @Html.ActionLink("We're looking for help", "All", "Organizations")
+                        @Html.ActionLink("We're looking for help", "All", "Organizations", new { area = "" }, null)
                     </li>
                     }
                     else

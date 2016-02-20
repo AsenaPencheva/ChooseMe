@@ -3,118 +3,130 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Create</h2>
-@using (Html.BeginForm("Create", "Animal", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="panel panel-success">
-        <div class="panel panel-heading">Primary Information</div>
-        <div class="panel panel-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+<div id="create-page">
+    <h2 class="text-center">Create</h2>
+    <br />
+    @using (Html.BeginForm("Create", "Animal", FormMethod.Post, new { @class = "form-horizontal text-center", role = "form", id = "create" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="col-md-12">
+            <div class="col-md-10">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">Primary Information</div>
+                    <div class="panel panel-body text-center">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Type, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Gender, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.EnumDropDownListFor(m => m.Gender, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.DateOfBirth, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", type = "date" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Story, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.TextAreaFor(m => m.Story, new { @class = "form-control", cols = 35, @rows = 3 })
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Type, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control" })
+            <div class="col-md-10">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">Character</div>
+                    <div class="panel panel-body text-center">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsKidsFriendly, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsKidsFriendly, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsCatsFriendly, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsCatsFriendly, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsDogsFriendly, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsDogsFriendly, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(m => m.Gender, new { @class = "form-control" })
+            <div class="col-md-10">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">Appearance</div>
+                    <div class="panel panel-body text-center">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FurColor, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.EnumDropDownListFor(m => m.FurColor, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsLonghaired, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsLonghaired, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.DateOfBirth, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", type = "date" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Story, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(m => m.Story, new { @class = "form-control", cols = 35, @rows = 3 })
+            <div class="col-md-10">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">Health Condition</div>
+                    <div class="panel panel-body text-center">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Disease, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.TextAreaFor(m => m.Disease, new { @class = "form-control", cols = 35, @rows = 3 })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsCastraited, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsCastraited, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsChipped, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsChipped, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.IsVaccinated, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-5">
+                                @Html.CheckBoxFor(m => m.IsVaccinated, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-success">
-        <div class="panel panel-heading">Character</div>
-        <div class="panel panel-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsKidsFriendly, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsKidsFriendly, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsCatsFriendly, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsCatsFriendly, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsDogsFriendly, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsDogsFriendly, new { @class = "form-control" })
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-success">
-        <div class="panel panel-heading">Appearance</div>
-        <div class="panel panel-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.FurColor, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.EnumDropDownListFor(m => m.FurColor, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsLonghaired, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsLonghaired, new { @class = "form-control" })
-                </div>
-            </div>
-            </div>
-    </div>
-    <div class="panel panel-success">
-        <div class="panel panel-heading">Health Condition</div>
-        <div class="panel panel-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Disease, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(m => m.Disease, new { @class = "form-control", cols = 35, @rows = 3 })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsCastraited, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsCastraited, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsChipped, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsChipped, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.IsVaccinated, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(m => m.IsVaccinated, new { @class = "form-control" })
-                </div>
-            </div>
-        </div>
-    </div>
-    <input type="submit" value="Create" class="btn btn-success" />
-}
+        <input type="submit" value="Create" class="btn btn-success" />
+    }
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -96,10 +96,12 @@
     <Compile Include="Contracts\IGodparentService.cs" />
     <Compile Include="Contracts\IMessageService.cs" />
     <Compile Include="Contracts\IOrganizationService.cs" />
+    <Compile Include="Contracts\IPhotoService.cs" />
     <Compile Include="Contracts\IVolunteerFormService.cs" />
     <Compile Include="GodparentService.cs" />
     <Compile Include="MessageService.cs" />
     <Compile Include="OrganizationService.cs" />
+    <Compile Include="PhotoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VolunteerFormService.cs" />
   </ItemGroup>
