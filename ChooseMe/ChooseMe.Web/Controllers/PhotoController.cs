@@ -1,4 +1,4 @@
-﻿namespace ChooseMe.Web.Areas.Organization.Controllers
+﻿namespace ChooseMe.Web.Controllers
 {
     using ChooseMe.Models;
     using Models.Animal;
@@ -9,7 +9,7 @@
     using System.Web;
     using System.Web.Mvc;
 
-    public class PhotoController:Controller
+    public class PhotoController : Controller
     {
         private IPhotoService photos;
         private IAnimalService animal;
@@ -18,12 +18,6 @@
         {
             this.photos = photos;
             this.animal = animal;
-        }
-
-        [HttpGet]
-        public ActionResult Upload()
-        {
-            return this.View();
         }
 
         [HttpPost]

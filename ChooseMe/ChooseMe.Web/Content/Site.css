@@ -142,3 +142,9 @@ form#create input.btn{
      width:1000px;
      margin-right:15%;
 }
+
+.thumb
+{
+    padding: 0px;
+    margin: 0px;
+}

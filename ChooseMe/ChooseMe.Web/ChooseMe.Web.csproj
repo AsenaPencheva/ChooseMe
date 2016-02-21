@@ -206,7 +206,7 @@
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
     <Compile Include="Areas\Organization\Controllers\AnimalController.cs" />
     <Compile Include="Areas\Organization\Controllers\PhotoController.cs" />
-    <Compile Include="Areas\Organization\Models\Animal\CreateViewModel.cs" />
+    <Compile Include="Areas\Organization\Models\Animal\AnimalCreateViewModel.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptersController.cs" />
@@ -214,6 +214,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

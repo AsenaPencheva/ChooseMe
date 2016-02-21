@@ -30,7 +30,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateViewModel model)
+        public ActionResult Create(AnimalCreateViewModel model)
         {
             if (model != null && ModelState.IsValid)
             {
@@ -44,7 +44,7 @@
 
                 var result = this.animals.AddNew(newAnimal);
 
-                return this.RedirectToAction("Upload", "Photo", new { area = "Organization", id = result.Id, animal = newAnimal });
+                return this.RedirectToAction("Details", "Animals", new { area = "", id = result.Id});
             }
 
             return this.View(model);

@@ -8,9 +8,11 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
-
+    using System.Web;
     public class AnimalDetailView: IMapFrom<Animal>, IHaveCustomMappings
     {
+        public string Id { get; set; }
+
         [Required]
         public AnimalType Type { get; set; }
 

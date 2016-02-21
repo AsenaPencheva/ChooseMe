@@ -9,7 +9,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Collections.Generic;
     using System.Web;
-    public class CreateViewModel: IMapFrom<Animal>
+    public class AnimalCreateViewModel: IMapFrom<Animal>
     {
         [Required]
         [DisplayName("Cat or Dog")]
