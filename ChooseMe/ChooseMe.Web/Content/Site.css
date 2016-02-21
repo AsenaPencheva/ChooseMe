@@ -138,11 +138,6 @@ form#create{
      width:970px;
 }
 
-form#create input.btn{
-     width:1000px;
-     margin-right:15%;
-}
-
 .thumb
 {
     padding: 0px;
@@ -288,4 +283,13 @@ span.round-tab:hover {
         position: absolute;
         left: 35%;
     }
+}
+
+div.org-animals{
+    height: 220px;
+}
+
+div.home-images{
+    height: 350px;
+    vertical-align: middle;
 }

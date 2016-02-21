@@ -37,7 +37,7 @@
                 newAdoptionForm.AnimalId = id;
 
                 newAdoptionForm.Animal = animals.GetById(id).FirstOrDefault();
-
+               
                 newAdoptionForm.UserId = this.User.Identity.GetUserId();
 
                 newAdoptionForm.User = adopters.GetById(newAdoptionForm.UserId).FirstOrDefault();
