@@ -2,14 +2,16 @@
 {
     using ChooseMe.Models;
     using Models.Animal;
+    using Models.Photo;
     using Services.Contracts;
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
 
-    public class PhotoController:Controller
+    public class PhotoController : Controller
     {
         private IPhotoService photos;
         private IAnimalService animal;
@@ -28,31 +30,38 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Upload(IEnumerable<HttpPostedFileBase> files, int id)
+        public ActionResult Upload(UploadPhotoViewModel model, int id)
         {
-            foreach (var file in files)
+            if (model != null && ModelState.IsValid)
             {
-                if (file.ContentLength > 0)
+                foreach (var file in model.Files)
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var folderPath = Server.MapPath("~/Images/Upload/" + id);
-                    string imagePath = folderPath + "/" + fileName;
-
-                    if (!Directory.Exists(folderPath))
+                    if (file.ContentLength > 0)
                     {
-                        DirectoryInfo di = Directory.CreateDirectory(folderPath);
+                        var fileName = Path.GetFileName(file.FileName);
+                        var folderPath = Server.MapPath("~/Images/Upload/" + id);
+                        string imagePath = folderPath + "/" + fileName;
+
+                        if (!Directory.Exists(folderPath))
+                        {
+                            DirectoryInfo di = Directory.CreateDirectory(folderPath);
+                        }
+
+                        file.SaveAs(imagePath);
+
+                        var photo = new Photo();
+                        photo.Address = "/Images/Upload/" + id + "/" + fileName;
+                        photo.AnimalId = id;
+                        photo.Animal = this.animal.GetById(id).FirstOrDefault();
+                        this.photos.AddNew(photo);
                     }
-
-                    file.SaveAs(imagePath);
-
-                    var photo = new Photo();
-                    photo.Address = "/Images/Upload/" + id + "/" + fileName;
-                    photo.AnimalId = id;
-                    photo.Animal = this.animal.GetById(id).FirstOrDefault();
-                    this.photos.AddNew(photo);
                 }
+                return this.RedirectToAction("Details", "Animals", new { area = "", id = id });
             }
-            return this.RedirectToAction("Details", "Animals", new { area = "", id = id });
+            else
+            {
+                return this.View();
+            }
         }
     }
 }
