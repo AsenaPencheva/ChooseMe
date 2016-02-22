@@ -290,6 +290,18 @@ div.org-animals{
 }
 
 div.home-images{
-    height: 350px;
-    vertical-align: middle;
+    height: 300px;
+}
+
+div.home-images img{
+    margin-top:25%;
+    border: 2px dashed #2b856f;
+}
+
+h3>strong>a.home-link{
+    text-decoration: none!important;
+}
+
+body > div.container.body-content > div{
+    background-image: url("../Images/profile.jpg");
 }

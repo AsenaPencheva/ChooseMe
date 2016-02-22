@@ -12,7 +12,7 @@
                     <div class="square-box pull-left">
                         @Html.DisplayFor(m => animal.Photo, "PetPicture")
                     </div>
-                    <h5 class="text-success">@animal.Organization.Name</h5>
+                    <h5 class="text-success"><a href=@animal.Organization.Id>@animal.Organization.Name</a></h5>
                     <h4>Name:<b><a href="~/Animals/Details/@animal.Id">@animal.Name</a></b></h4>
                     @Html.DisplayFor(m => animal.Age, "Age")
                     <h5>

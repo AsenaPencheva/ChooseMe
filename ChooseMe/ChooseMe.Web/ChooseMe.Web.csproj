@@ -204,8 +204,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
+    <Compile Include="Areas\Adopter\Controllers\AdopterController.cs" />
     <Compile Include="Areas\Adopter\Controllers\AdoptionFormController.cs" />
     <Compile Include="Areas\Adopter\Controllers\VolunteerFormController.cs" />
+    <Compile Include="Areas\Adopter\Models\AdopterProfileViewModel.cs" />
     <Compile Include="Areas\Adopter\Models\CreateAdoptionFormViewModel.cs" />
     <Compile Include="Areas\Adopter\Models\CreateVolunteerFormViewModel.cs" />
     <Compile Include="Areas\Organization\Controllers\AnimalController.cs" />
@@ -259,6 +261,7 @@
     <Content Include="Images\male.gif" />
     <Content Include="Images\paw-prints.jpg" />
     <Content Include="Images\petPicture.jpg" />
+    <Content Include="Images\profile.jpg" />
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
@@ -276,6 +279,7 @@
     <Content Include="Areas\Organization\Views\Photo\Upload.cshtml" />
     <Content Include="Areas\Adopter\Views\AdoptionForm\Create.cshtml" />
     <Content Include="Areas\Adopter\Views\VolunteerForm\Create.cshtml" />
+    <Content Include="Areas\Adopter\Views\Adopter\Profile.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

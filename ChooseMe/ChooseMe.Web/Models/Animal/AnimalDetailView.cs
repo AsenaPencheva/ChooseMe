@@ -12,7 +12,6 @@
     public class AnimalDetailView: IMapFrom<Animal>, IHaveCustomMappings
     {
         public string Id { get; set; }
-
         [Required]
         public AnimalType Type { get; set; }
 

@@ -2,17 +2,18 @@
 
 @foreach (var pet in Model)
 {
-    <div class="table-bordered">
+    <div class="table">
         <div class="text-center home-images">
            @Html.DisplayFor(m => pet.Photo, "PetPicture")
         </div>
         <div>
             <h3 class="text-center">
                 <strong>
-                    <a href="~/Animals/Details/@pet.Id">@pet.Name</a>
+                    <a class="home-link" href="~/Animals/Details/@pet.Id">@pet.Name</a>
                 </strong>
             </h3>
         </div>
+        <hr/>
        <span class="pull-left">@Html.DisplayFor(m => pet.Gender, "Gender")</span>
        <span class="pull-right">@Html.DisplayFor(m => pet.AddedOn, "Date")</span>
     </div>
