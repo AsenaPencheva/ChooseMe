@@ -1,5 +1,6 @@
 ﻿@model ChooseMe.Web.Models.Animal.AnimalDetailView
 @using ChooseMe.Web.Areas.Organization.Models.Animal
+@using ChooseMe.Common.Constants
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -34,7 +35,14 @@
                         <div class="col-xs-12 col-sm-4 text-center">
                             <h2><strong>@Model.AdoptionForms.Count()</strong></h2>
                             <p><small>Adoption Forms</small></p>
+                            @if (User.IsInRole(ControllersConst.AdopterRole))
+                            {
                             @Html.ActionLink("Adoption form", "Create", "AdoptionForm", new { area = "Adopter", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                            }
+                            else if(User.IsInRole(ControllersConst.OrganizationRole))
+                            {
+                                @Html.ActionLink("Adoption forms", "ListViewAdoptionForms", "AdoptionForms", new { area = "", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                            }
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-4 text-center">
@@ -52,7 +60,10 @@
                         <br/>
                         <br/>
                         <div class="container">
+                            @if (Model.Photos.Count() != 0)
+                            {
                             <h3>More photos</h3>
+                            }
                             <br/>
                             <div class="row">
                                 @foreach (var photo in Model.Photos)

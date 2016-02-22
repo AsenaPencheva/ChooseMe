@@ -1,0 +1,19 @@
+﻿@model int
+@using ChooseMe.Common.Constants
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Adoption Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Adoption Forms</h2>
+
+<br />
+@if (User.IsInRole(ControllersConst.OrganizationRole))
+{
+    @Html.Action("AllByAnimal", "AdoptionForms", new { area = "", id = Model})
+}
+else if (User.IsInRole(ControllersConst.AdopterRole))
+{
+    @Html.Action("AllByAdopter", "AdoptionForms", new { area = "", id = User.Identity.GetUserId()})
+}

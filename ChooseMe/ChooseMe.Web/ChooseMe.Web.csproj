@@ -217,7 +217,7 @@
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptersController.cs" />
-    <Compile Include="Controllers\AdoptionFormController.cs" />
+    <Compile Include="Controllers\AdoptionFormsController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -343,22 +343,22 @@
     <Content Include="Views\Animals\_AllTable.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\IsLonghaired.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Age.cshtml" />
-    <Content Include="Views\Animals\_Paging.cshtml" />
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnimalLabels.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Disease.cshtml" />
     <Content Include="Views\Organizations\All.cshtml" />
     <Content Include="Views\Organizations\_AllTable.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Check.cshtml" />
-    <Content Include="Views\Organizations\_Paging.cshtml" />
     <Content Include="Views\Organizations\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ThumbnailPetPicture.cshtml" />
     <Content Include="Views\Adopters\Details.cshtml" />
     <Content Include="Views\Shared\_AllFormOrganizationView.cshtml" />
-    <Content Include="Views\VolunteersForm\_Paging.cshtml" />
+    <Content Include="Views\Shared\_Paging.cshtml" />
     <Content Include="Views\Forms\_AllAdoptersAFView.cshtml" />
     <Content Include="Views\Forms\_AllAdoptersVFView.cshtml" />
     <Content Include="Views\VolunteersForm\ListViewForms.cshtml" />
+    <Content Include="Views\AdoptionForms\ListViewAdoptionForms.cshtml" />
+    <Content Include="Views\AdoptionForms\_AllAdoptersAFView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,6 +12,8 @@
 
         public string AnimalName { get; set; }
 
+        public int AnimalId { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime CreatedOn { get; set; }
 

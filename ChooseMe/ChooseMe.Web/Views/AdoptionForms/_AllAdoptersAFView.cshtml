@@ -1,17 +1,11 @@
-﻿@model PagedList.PagedList<ChooseMe.Web.Models.Forms.FormsListView>
+﻿@model PagedList.PagedList<ChooseMe.Web.Models.Forms.AdoptionFormsAdopterListViewModel>
 <table class="table table-striped text-center">
     <tr>
         <th class="text-center">
             From
         </th>
         <th class="text-center">
-            Full name
-        </th>
-        <th class="text-center">
-            Email
-        </th>
-        <th class="text-center">
-            Phone number
+            Animal Name
         </th>
         <th class="text-center">
             More
@@ -22,7 +16,7 @@
     </tr>
     @if (Model.Count() == 0)
     {
-        <h1>You don't have volunteers form</h1>
+        <h1>You don't have adoption forms</h1>
     }
     else
     {
@@ -33,19 +27,13 @@
                     @af.CreatedOn
                 </td>
                 <td>
-                    <a href="~/Adopters/Details/@af.UserId">@af.FullName</a>
-                </td>
-                <td>
-                    @af.Email
-                </td>
-                <td>
-                    @af.PhoneNumber
+                    <a href="~/Views/Animals/Details/@af.AnimalId">@af.AnimalName</a>
                 </td>
                 <td>
                     <a href="~/Views/Forms/Details/@af.Id">Full form</a>
                 </td>
                 <td>
-                    @Html.ActionLink("X", "Delete", "VolunteersForm", new { area = "", id = @af.Id}, new { @class ="btn btn-danger"})
+                    @Html.ActionLink("X", "Delete", "AdoptionForm", new { area = "", id = @af.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

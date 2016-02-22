@@ -27,7 +27,6 @@
 
         public ActionResult AllByOrganization(int? page)
         {
-
             int pageNumber = (page ?? 1);
 
             var result = this.volunteerForms.GetAllByOrganizationId(User.Identity.GetUserId()).ProjectTo<FormsListView>();

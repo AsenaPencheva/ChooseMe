@@ -1,4 +1,5 @@
 ﻿@model ChooseMe.Web.Models.Forms.FormsListView
+@using ChooseMe.Common.Constants
 @{
     ViewBag.Title = "ListViewForms";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,4 +7,11 @@
 
 <h2 class="text-center">Volunteer Forms</h2>
 <br/>
- @Html.Action("AllByOrganization", "VolunteersForm", new { area = ""})
+@if (User.IsInRole(ControllersConst.OrganizationRole))
+{
+ @Html.Action("AllByOrganization", "VolunteersForm", new { area = "" })
+}
+else if(User.IsInRole(ControllersConst.AdopterRole))
+{
+
+}
