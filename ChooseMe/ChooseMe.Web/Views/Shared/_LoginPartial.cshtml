@@ -10,11 +10,11 @@
         <li>
             @if (User.IsInRole("Adopter"))
             {
-                @Html.ActionLink("Hello, " + User.Identity.GetUserName() + "!", "Profile", "Adopter", routeValues: new { area="Adopter"}, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink("Hello, " + User.Identity.GetUserName() + "!", "Update", "Adopter", routeValues: new { area="Adopter"}, htmlAttributes: new { title = "Manage" })
             }
             else
             {
-                @Html.ActionLink("Hello, " + User.Identity.GetUserName() + "!", "Profile", "Organization", routeValues: new { area="Organization"}, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink("Hello, " + User.Identity.GetUserName() + "!", "Update", "Organization", routeValues: new { area="Organization"}, htmlAttributes: new { title = "Manage" })
             }
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>

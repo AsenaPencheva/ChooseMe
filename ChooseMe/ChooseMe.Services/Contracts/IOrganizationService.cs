@@ -9,7 +9,7 @@
 
         IQueryable<Organization> GetById(string id);
 
-        IQueryable<Organization> UpdateOrganization(Organization updatedOrganization);
+        IQueryable<Organization> UpdateOrganization(Organization updatedOrganization, Organization currentOrganization);
 
         void DeleteOrganization(string id);
 

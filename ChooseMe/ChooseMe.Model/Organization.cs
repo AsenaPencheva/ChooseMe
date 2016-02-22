@@ -23,7 +23,6 @@
 
         public string Description { get; set; }
 
-        [Required]
         public bool IsLookingForVolunteers { get; set; }
 
         public virtual ICollection<Animal> Animals

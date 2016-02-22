@@ -7,7 +7,7 @@
 <h2>Profile</h2>
 
 <br><br>
-<div class="container-fluid well span6 text-center">
+<div class="container-fluid well span6 text-center" id="profile">
     <div class="row-fluid">
         <div class="span2">
             <img src=@Model.ImageURL class="img-circle" width="300">
@@ -16,7 +16,7 @@
         <br />
         <div class="span2 btn-group col-md-6">
             <div class="btn-group col-md-8">
-                <a class="btn dropdown-toggle btn-success col-md-8" data-toggle="dropdown" href="#">
+                <a class="btn dropdown-toggle btn-danger col-md-8" data-toggle="dropdown" href="#">
                     Forms
                     <span class="icon-cog icon-white"></span><span class="caret"></span>
                 </a>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        @using (Html.BeginForm("Profile", "Adopter", FormMethod.Post, new { @class = "form-horizontal text-center", role = "form" }))
+        @using (Html.BeginForm("Update", "Adopter", FormMethod.Post, new { @class = "form-horizontal text-center", role = "form" }))
             {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-                <input type="submit" class="btn btn-success loading" value="Update" />
+                <input type="submit" class="btn btn-warning loading" value="Update" />
         }
     </div>
 </div>
