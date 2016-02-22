@@ -214,6 +214,7 @@
     <Compile Include="Areas\Organization\Controllers\OrganizationController.cs" />
     <Compile Include="Areas\Organization\Controllers\PhotoController.cs" />
     <Compile Include="Areas\Organization\Models\Animal\AnimalCreateViewModel.cs" />
+    <Compile Include="Areas\Organization\Models\Animal\MyAnimalsViewModel.cs" />
     <Compile Include="Areas\Organization\Models\Organization\OrganizationProfileViewModel.cs" />
     <Compile Include="Areas\Organization\Models\Photo\UploadPhotoViewModel.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
@@ -283,6 +284,8 @@
     <Content Include="Areas\Adopter\Views\VolunteerForm\Create.cshtml" />
     <Content Include="Areas\Adopter\Views\Adopter\Update.cshtml" />
     <Content Include="Areas\Organization\Views\Organization\Update.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\Edit.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\_AllTable.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
