@@ -6,7 +6,7 @@
     using ChooseMe.Services.Contracts;
     using Data.Repositories;
 
-    class AdoptionFormService :IAdoptionFormService
+    public class AdoptionFormService :IAdoptionFormService
     {
         private readonly IRepository<AdoptionForm> adoptionForms;
 
@@ -15,14 +15,12 @@
             this.adoptionForms = adoptionForms;
         }
 
-        public AdoptionForm AddNew(AdoptionForm form)
+        public void AddNew(AdoptionForm form)
         {
             this.adoptionForms.
                 Add(form);
 
             this.adoptionForms.SaveChanges();
-
-            return form;
         }
 
         public void DeleteAdoptionForm(int id)

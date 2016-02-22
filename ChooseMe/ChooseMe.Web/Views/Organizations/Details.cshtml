@@ -1,4 +1,5 @@
-﻿@model ChooseMe.Web.Models.Organization.OrganizationDetailView
+﻿@using PagedList.Mvc
+@model ChooseMe.Web.Models.Organization.OrganizationDetailView
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,20 +14,18 @@
 <br/>
     @if (Model.IsLookingForVolunteers)
     {
-        <label class="label label-success text-center">
-            Looking for volunters <span class="glyphicon glyphicon-hand-up"></span>
-        </label>
+            @Html.ActionLink("Looking for volunters", "Create", "VolunteerForm", new { area = "Adopter", id = Model.Id }, new { @class="btn-sm btn-success"}) 
     } 
 <div class="jumbotron">@Model.Description</div>
 <div class="row">
-    @foreach (var animal in Model.Animals)
+    @foreach (var animal in Model.Animals) 
     {
         <div class="col-sm-3">
             <a href="~/Animals/Details/@animal.Id" class="panel-link">
                 <div class="panel panel-success">
                     <div class="panel-heading text-center">@animal.Name
             </div>
-                <div class="panel-body">
+                <div class="panel-body org-animals" >
                     @Html.DisplayFor(m => animal.Photo, "ThumbnailPetPicture")
                 </div>
             </div>

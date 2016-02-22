@@ -12,26 +12,9 @@
         <div class="span2">
             <img src=@Model.ImageURL class="img-circle" width="300">
         </div>
-
         <div class="span8">
             <h3>@Model.FirstName @Model.LastName</h3>
             <h6>Email: @Model.Email</h6>
         </div>
-
-        @if (Model.UserName == User.Identity.Name)
-        {
-        <div class="span2">
-            <div class="btn-group">
-                <a class="btn dropdown-toggle btn-success" data-toggle="dropdown" href="#">
-                    Forms
-                    <span class="icon-cog icon-white"></span><span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><span class="icon-wrench"></span> Adoption forms</a></li>
-                    <li><a href="#"><span class="icon-trash"></span> Volunteer forms</a></li>
-                </ul>
-            </div>
-        </div>
-        }
     </div>
 </div>

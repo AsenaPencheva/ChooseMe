@@ -4,6 +4,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -22,6 +23,7 @@
 
         public DateTime CreatedOn { get; set; }
 
+        [DataType(DataType.ImageUrl)]
         public string ImageURL { get; set; }
 
         public virtual ICollection<Message> Messages

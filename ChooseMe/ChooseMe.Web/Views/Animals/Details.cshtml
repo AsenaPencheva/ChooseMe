@@ -18,7 +18,7 @@
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">
-                            <em>@Model.Organization.Name</em>
+                            <em><a href=@Model.OrganizationId>@Model.Organization.Name</a></em>
                             <h2>@Model.Name</h2>
                             <h5><em>@Model.Type</em>@Html.DisplayFor(m => m.Gender, "Gender")</h5>
                             <p>@Model.Story</p>
@@ -34,7 +34,7 @@
                         <div class="col-xs-12 col-sm-4 text-center">
                             <h2><strong>@Model.AdoptionForms.Count()</strong></h2>
                             <p><small>Adoption Forms</small></p>
-                            <button class="btn btn-success btn-block"><span class="glyphicon glyphicon-heart"></span> Adoption Forms</button>
+                            @Html.ActionLink("Adoption form", "Create", "AdoptionForm", new { area = "Adopter", id = Model.Id }, new { @class = "btn btn-success btn-block" })
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-4 text-center">

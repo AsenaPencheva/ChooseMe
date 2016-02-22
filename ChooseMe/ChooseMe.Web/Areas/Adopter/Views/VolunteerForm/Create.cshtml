@@ -1,0 +1,94 @@
+﻿@model ChooseMe.Web.Areas.Adopter.Models.CreateVolunteerFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<h2>Volunteer Form</h2>
+<br/>
+<br />
+<div class="jumbotron col-md-6">
+    @using (Html.BeginForm("Create", "VolunteerForm", FormMethod.Post, new { @class = "form-horizontal create-vf", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanBeFosterHome, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanBeFosterHome, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanHelpWithAdministrationWork, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanHelpWithAdministrationWork, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanHelpWithEvents, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanHelpWithEvents, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanHelpWithOnlinePresence, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanHelpWithOnlinePresence, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanHelpWithTransportingAnimal, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanHelpWithTransportingAnimal, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanTakeCareOfBabyAnimal, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanTakeCareOfBabyAnimal, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CanTakeCareOfHandicappedAnimal, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.CheckBoxFor(m => m.CanTakeCareOfHandicappedAnimal, new { @class = "form-control" })
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Other, new { @class = "col-md-5 control-label pull-left text-left" })
+            <div class="col-md-5">
+                @Html.TextAreaFor(m => m.Other, new { @class = "form-control" })
+            </div>
+        </div>
+        <br/>
+            <input type="submit" class="btn btn-success text-center pull-left" name="Submit" />
+    }
+</div>
+<div class="col-md-6 pull-right">
+    <img src="~/Images/volunteer.jpg" width="500px"/>
+    <br/>
+    <br/>
+    <br/>
+    <br />
+    <br />
+    <br />
+    <img src="~/Images/hands-vol.jpg" width="500px" />
+</div>
+<div class="clearfix"></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

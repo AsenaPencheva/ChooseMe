@@ -11,7 +11,6 @@
         [MinLength(10, ErrorMessage = "Address must be at least 10 characters long!")]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = ErrorMessages.ErrorRequired)]
         public bool IsOwningOtherAnimals { get; set; }
 
         public string AnimalsDescription { get; set; }
@@ -21,7 +20,6 @@
         [Required(ErrorMessage = ErrorMessages.ErrorRequired)]
         public ResidenceType ResidenceType { get; set; }
 
-        [Required(ErrorMessage = ErrorMessages.ErrorRequired)]
         public bool IsKidsInHome { get; set; }
 
         public string KidsDescription { get; set; }
@@ -30,7 +28,6 @@
         [MinLength(5, ErrorMessage = "Your answer must be at least 5 characters long!")]
         public string AttitudeAboutCastration { get; set; }
 
-        [Required(ErrorMessage = ErrorMessages.ErrorRequired)]
         public bool IsHomecheckAndContactAllowed { get; set; }
 
         [Required(ErrorMessage = ErrorMessages.ErrorRequired)]

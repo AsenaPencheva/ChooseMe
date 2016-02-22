@@ -9,7 +9,7 @@
 
         AdoptionForm GetById(int id);
 
-        AdoptionForm AddNew(AdoptionForm form);
+        void AddNew(AdoptionForm form);
 
         void DeleteAdoptionForm(int id);
     }

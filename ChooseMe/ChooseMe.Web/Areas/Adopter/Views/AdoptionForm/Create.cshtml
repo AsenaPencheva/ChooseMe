@@ -1,0 +1,216 @@
+﻿@model ChooseMe.Web.Areas.Adopter.Models.CreateAdoptionFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adoption Form</h2>
+
+    <div class="container">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+
+                            <li role="presentation" class="active">
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li role="presentation" class="disabled">
+                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @using (Html.BeginForm("Create", "AdoptionForm", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="tab-content pull-left">
+                            <div class="tab-pane active" role="tabpanel" id="step1">
+                                <div class="step1">
+                                    <div class="row">
+                                        <h3>Personal Information</h3>
+                                        <br/>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-7 control-label pull-left text-left" })
+                                            <div class="col-md-5">
+                                                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Address, new { @class = "col-md-7 control-label pull-left text-left" })
+                                            <div class="col-md-5">
+                                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.ResidenceType, new { @class = "col-md-7 control-label pull-left text-left" })
+                                            <div class="col-md-5">
+                                                @Html.EnumDropDownListFor(m => m.ResidenceType, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.IsKidsInHome, new { @class = "col-md-7 control-label pull-left text-left" })
+                                            <div class="col-md-5">
+                                                @Html.CheckBoxFor(m => m.IsKidsInHome, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.KidsDescription, new { @class = "col-md-7 control-label pull-left text-left" })
+                                            <div class="col-md-5">
+                                                @Html.TextAreaFor(m => m.KidsDescription, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline pull-left">
+                                    <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" role="tabpanel" id="step2">
+                                <div class="step2">
+                                    <div class="step_21">
+                                        <div class="row">
+                                            <h3>Experience with Animals</h3>
+                                            <br/>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.IsOwningOtherAnimals, new { @class = "col-md-7 control-label pull-left text-left" })
+                                                <div class="col-md-5">
+                                                    @Html.CheckBoxFor(m => m.IsOwningOtherAnimals, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.AnimalsDescription, new { @class = "col-md-7 control-label pull-left text-left" })
+                                                <div class="col-md-5">
+                                                    @Html.TextAreaFor(m => m.AnimalsDescription, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.ExpirienceWithAnimals, new { @class = "col-md-7 control-label pull-left text-left" })
+                                                <div class="col-md-5">
+                                                    @Html.TextAreaFor(m => m.ExpirienceWithAnimals, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.AttitudeAboutCastration, new { @class = "col-md-7 control-label pull-left text-left" })
+                                                <div class="col-md-5">
+                                                    @Html.TextBoxFor(m => m.AttitudeAboutCastration, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(m => m.IsHomecheckAndContactAllowed, new { @class = "col-md-7 control-label pull-left text-left" })
+                                                <div class="col-md-5">
+                                                    @Html.CheckBoxFor(m => m.IsHomecheckAndContactAllowed, new { @class = "form-control" })
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                            <ul class="list-inline pull-left">
+                                                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                                <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="complete">
+                                            <h3>Complete</h3>
+                                            <p>Press submit and you'll complete the form.</p>
+                                            <li><input type="submit" class="btn btn-primary next-step" name="Submit" /></li>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    }
+                                </div>
+</section>
+        </div>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //Initialize tooltips
+        $('.nav-tabs > li a[title]').tooltip();
+
+        //Wizard
+        $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+            var $target = $(e.target);
+
+            if ($target.parent().hasClass('disabled')) {
+                return false;
+            }
+        });
+
+        $(".next-step").click(function (e) {
+
+            var $active = $('.wizard .nav-tabs li.active');
+            $active.next().removeClass('disabled');
+            nextTab($active);
+
+        });
+        $(".prev-step").click(function (e) {
+
+            var $active = $('.wizard .nav-tabs li.active');
+            prevTab($active);
+
+        });
+    });
+
+    function nextTab(elem) {
+        $(elem).next().find('a[data-toggle="tab"]').click();
+    }
+    function prevTab(elem) {
+        $(elem).prev().find('a[data-toggle="tab"]').click();
+    }
+
+
+    //according menu
+
+    $(document).ready(function () {
+        //Add Inactive Class To All Accordion Headers
+        $('.accordion-header').toggleClass('inactive-header');
+
+        //Set The Accordion Content Width
+        var contentwidth = $('.accordion-header').width();
+        $('.accordion-content').css({});
+
+        //Open The First Accordion Section When Page Loads
+        $('.accordion-header').first().toggleClass('active-header').toggleClass('inactive-header');
+        $('.accordion-content').first().slideDown().toggleClass('open-content');
+
+        // The Accordion Effect
+        $('.accordion-header').click(function () {
+            if ($(this).is('.inactive-header')) {
+                $('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().slideToggle().toggleClass('open-content');
+                $(this).toggleClass('active-header').toggleClass('inactive-header');
+                $(this).next().slideToggle().toggleClass('open-content');
+            }
+
+            else {
+                $(this).toggleClass('active-header').toggleClass('inactive-header');
+                $(this).next().slideToggle().toggleClass('open-content');
+            }
+        });
+
+        return false;
+    });
+</script>

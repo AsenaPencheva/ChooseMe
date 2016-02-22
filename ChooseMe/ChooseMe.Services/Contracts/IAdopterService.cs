@@ -9,7 +9,7 @@
 
         IQueryable<Adopter> GetById(string id);
 
-        IQueryable<Adopter> UpdateAdopter(Adopter updatedAdopter);
+        IQueryable<Adopter> UpdateAdopter(Adopter updatedAdopter, Adopter user);
 
         void DeleteAdopter(string id);
     }

@@ -204,9 +204,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
+    <Compile Include="Areas\Adopter\Controllers\AdopterController.cs" />
+    <Compile Include="Areas\Adopter\Controllers\AdoptionFormController.cs" />
+    <Compile Include="Areas\Adopter\Controllers\VolunteerFormController.cs" />
+    <Compile Include="Areas\Adopter\Models\AdopterProfileViewModel.cs" />
+    <Compile Include="Areas\Adopter\Models\CreateAdoptionFormViewModel.cs" />
+    <Compile Include="Areas\Adopter\Models\CreateVolunteerFormViewModel.cs" />
     <Compile Include="Areas\Organization\Controllers\AnimalController.cs" />
     <Compile Include="Areas\Organization\Controllers\PhotoController.cs" />
     <Compile Include="Areas\Organization\Models\Animal\AnimalCreateViewModel.cs" />
+    <Compile Include="Areas\Organization\Models\Photo\UploadPhotoViewModel.cs" />
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptersController.cs" />
@@ -214,7 +221,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
-    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,12 +257,15 @@
     <Content Include="Images\cats-meow_1250010i.jpg" />
     <Content Include="Images\cover.jpg" />
     <Content Include="Images\female.gif" />
+    <Content Include="Images\hands-vol.jpg" />
     <Content Include="Images\male.gif" />
     <Content Include="Images\paw-prints.jpg" />
     <Content Include="Images\petPicture.jpg" />
+    <Content Include="Images\profile.jpg" />
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
+    <Content Include="Images\volunteer.jpg" />
     <Content Include="Scripts\App\searchAjaxScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -268,6 +277,9 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Organization\Views\Animal\Create.cshtml" />
     <Content Include="Areas\Organization\Views\Photo\Upload.cshtml" />
+    <Content Include="Areas\Adopter\Views\AdoptionForm\Create.cshtml" />
+    <Content Include="Areas\Adopter\Views\VolunteerForm\Create.cshtml" />
+    <Content Include="Areas\Adopter\Views\Adopter\Profile.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -343,8 +355,6 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Adopter\Controllers\" />
-    <Folder Include="Areas\Adopter\Models\" />
     <Folder Include="Areas\Adopter\Views\Shared\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
   </ItemGroup>
