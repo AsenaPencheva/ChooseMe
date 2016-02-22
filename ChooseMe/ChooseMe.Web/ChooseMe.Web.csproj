@@ -217,10 +217,12 @@
     <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdoptersController.cs" />
+    <Compile Include="Controllers\AdoptionFormController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
+    <Compile Include="Controllers\VolunteersFormController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +242,9 @@
     <Compile Include="Models\Adopter\AdopterDetailView.cs" />
     <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
+    <Compile Include="Models\Forms\AdoptionFormsAdopterListViewModel.cs" />
+    <Compile Include="Models\Forms\FormsListView.cs" />
+    <Compile Include="Models\Forms\VolunteerFormsAdopterListViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Organization\OrganizationDetailView.cs" />
     <Compile Include="Models\Organization\OrganizationsListView.cs" />
@@ -349,6 +354,11 @@
     <Content Include="Views\Organizations\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ThumbnailPetPicture.cshtml" />
     <Content Include="Views\Adopters\Details.cshtml" />
+    <Content Include="Views\Shared\_AllFormOrganizationView.cshtml" />
+    <Content Include="Views\VolunteersForm\_Paging.cshtml" />
+    <Content Include="Views\Forms\_AllAdoptersAFView.cshtml" />
+    <Content Include="Views\Forms\_AllAdoptersVFView.cshtml" />
+    <Content Include="Views\VolunteersForm\ListViewForms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

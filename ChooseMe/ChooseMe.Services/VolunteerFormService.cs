@@ -38,6 +38,14 @@
                 .OrderByDescending(vf => vf.CreatedOn); 
         }
 
+        public IQueryable<VolunteerForm> GetAllByAdopterId(string id)
+        {
+            return this.volunteerForms
+                  .All()
+                 .Where(f => f.UserId == id)
+                  .OrderByDescending(vf => vf.CreatedOn);
+        }
+
         public VolunteerForm GetById(int id)
         {
             return this.volunteerForms

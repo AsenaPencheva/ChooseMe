@@ -38,6 +38,14 @@
                 .OrderByDescending(af => af.CreatedOn);
         }
 
+        public IQueryable<AdoptionForm> GetAllByUserId(string id)
+        {
+            return this.adoptionForms
+                .All()
+                .Where(af => af.UserId == id)
+                .OrderByDescending(af => af.CreatedOn);
+        }
+
         public AdoptionForm GetById(int id)
         {
             return this.adoptionForms

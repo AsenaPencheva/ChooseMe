@@ -1,0 +1,9 @@
+﻿@model ChooseMe.Web.Models.Forms.FormsListView
+@{
+    ViewBag.Title = "ListViewForms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Volunteer Forms</h2>
+<br/>
+ @Html.Action("AllByOrganization", "VolunteersForm", new { area = ""})

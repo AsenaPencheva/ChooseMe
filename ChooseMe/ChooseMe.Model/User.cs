@@ -13,12 +13,14 @@
     {
         private ICollection<Message> messages;
         private ICollection<Comment> comments;
+        private ICollection<VolunteerForm> volunteerForms;
 
         public User()
         {
             this.CreatedOn = DateTime.UtcNow;
             this.messages = new HashSet<Message>();
             this.comments = new HashSet<Comment>();
+            this.volunteerForms = new HashSet<VolunteerForm>();
         }
 
         public DateTime CreatedOn { get; set; }
@@ -36,6 +38,12 @@
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public virtual ICollection<VolunteerForm> VolunteerForms
+        {
+            get { return this.volunteerForms; }
+            set { this.volunteerForms = value; }
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

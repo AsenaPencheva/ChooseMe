@@ -7,6 +7,8 @@
     {
         IQueryable<VolunteerForm> GetAllByOrganizationId(string id);
 
+        IQueryable<VolunteerForm> GetAllByAdopterId(string id);
+
         VolunteerForm GetById(int id);
 
         VolunteerForm AddNew(VolunteerForm form);

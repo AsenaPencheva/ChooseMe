@@ -9,12 +9,9 @@
     {
         private ICollection<Animal> animals;
 
-        private ICollection<VolunteerForm> volunteerForms;
-
         public Organization()
         {
             this.animals = new HashSet<Animal>();
-            this.volunteerForms = new HashSet<VolunteerForm>();
         }
 
         [Required]
@@ -30,12 +27,6 @@
         {
             get { return this.animals; }
             set { this.animals = value; }
-        }
-
-        public virtual ICollection<VolunteerForm> VolunteerForms
-        {
-            get { return this.volunteerForms; }
-            set { this.volunteerForms = value; }
         }
     }
 }

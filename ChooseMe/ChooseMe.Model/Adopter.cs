@@ -9,8 +9,6 @@
     {
         private ICollection<Like> likes;
 
-        private ICollection<VolunteerForm> volunteerForms;
-
         private ICollection<AdoptionForm> adoptionForms;
 
         private ICollection<Godparent> godparents;
@@ -18,7 +16,6 @@
         public Adopter()
         {
             this.likes = new HashSet<Like>();
-            this.volunteerForms = new HashSet<VolunteerForm>();
             this.adoptionForms = new HashSet<AdoptionForm>();
             this.godparents = new HashSet<Godparent>();
         }
@@ -35,12 +32,6 @@
         {
             get { return this.likes; }
             set { this.likes = value; }
-        }
-
-        public virtual ICollection<VolunteerForm> VolunteerForms
-        {
-            get { return this.volunteerForms; }
-            set { this.volunteerForms = value; }
         }
 
         public virtual ICollection<AdoptionForm> AdoptionForms

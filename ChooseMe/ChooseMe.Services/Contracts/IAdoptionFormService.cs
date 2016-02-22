@@ -7,6 +7,8 @@
     {
         IQueryable<AdoptionForm> GetAllByAnimalId(int id);
 
+        IQueryable<AdoptionForm> GetAllByUserId(string id);
+
         AdoptionForm GetById(int id);
 
         void AddNew(AdoptionForm form);
