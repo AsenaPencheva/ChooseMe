@@ -15,7 +15,8 @@ namespace ChooseMe.Web.App_Start
     using Data;
     using ChooseMe.Data.Repositories;
     using ChooseMe.Common.Constants;
-
+    using Services.Contracts;
+    using Services;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -68,6 +69,9 @@ namespace ChooseMe.Web.App_Start
         {
             kernel.Bind<IChooseMeDbContext>().To<ChooseMeDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+
+            kernel.Bind<ICacheService>().To<HttpCacheService>();
+
             kernel.Bind(b => b
                 .From(Assemblies.DataServices)
                 .SelectAllClasses()

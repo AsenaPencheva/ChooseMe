@@ -25,24 +25,27 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li class="menu">
-                        @Html.ActionLink("We're looking for home", "All", "Animals", new { area = "" }, null)
-                    </li>
-                    <li class="menu">
-                        @Html.ActionLink("We're looking for help", "All", "Organizations", new { area = "" }, null)
-                    </li>
-                    <li>
-                        @if(User.IsInRole(ControllersConst.OrganizationRole))
+                        <li class="menu">
+                            @Html.ActionLink("We're looking for home", "All", "Animals", new { area = "" }, null)
+                        </li>
+                        <li class="menu">
+                            @Html.ActionLink("We're looking for help", "All", "Organizations", new { area = "" }, null)
+                        </li>
+                        if (User.IsInRole(ControllersConst.OrganizationRole))
                         {
-                            @Html.ActionLink("Volunteer Forms", "ListViewForms", "VolunteersForm", new { area="", id=User.Identity.GetUserId()}, null)
+                            <li>
+                                @Html.ActionLink("Volunteer Forms", "ListViewForms", "VolunteersForm", new { area = "", id = User.Identity.GetUserId() }, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Add Animal", "Create", "Animal", new { area = "Organization" }, null)
+                            </li>
                         }
-                    </li>
                     }
                     else
                     {
-                    <li class="menu">
-                        @Html.ActionLink("For more...", "Login", "Account")
-                     </li>
+                        <li class="menu">
+                            @Html.ActionLink("For more...", "Login", "Account")
+                        </li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -59,6 +62,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
 </body>
 </html>

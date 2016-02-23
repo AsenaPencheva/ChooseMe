@@ -4,47 +4,54 @@
     ViewBag.Title = "All Animals";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2 class="text-primary">Are you going to bring us home?</h2>
-<br/>
-<div class="row"  id="search-options">
-    <span class="pull-left">
-       @Html.EditorFor(m => m, "Search")
-    </span>
-    <span class="pull-right">
-        <strong>Sort by: </strong>
-        @Html.ActionLink("Date", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-danger loading" })
-        @Html.ActionLink("Age", "All", new { sortOrder = ViewBag.AgeSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-success loading" })
-        @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-warning loading" })
-    </span>
-</div>
-<div class="row dropdown">
-    <button class="btn btn-success loading dropdown-toggle" type="button" data-toggle="dropdown">
-        @if(ViewBag.Type != null)
-        {
-            @ViewBag.Type<span>s</span>
-        }
-        else
-        {
-            <span>Dog or Cat</span>
-        }
-        <span class="caret"></span>
-    </button>
-    <ul class="pull-left dropdown-menu">
-        <li>
-            @Html.ActionLink("Dog", "All", new { type = "Dog", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </li>
-        <li>
-            @Html.ActionLink("Cat", "All", new { type = "Cat", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </li>
-        <li>
-            @Html.ActionLink("Both", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </li>
-    </ul>
-</div>
-<br/>
-<br />
-<div class="row">
-    @Html.Partial("_AllTable")
-    <div id="ajax-search-results"></div>
-    @Html.Partial("_Paging")
-</div>
+<section>
+    <h2 class="text-primary">Are you going to bring us home?</h2>
+    <br />
+    <div class="row" id="search-options">
+        <span class="pull-left">
+            @Html.EditorFor(m => m, "Search")
+        </span>
+        <span class="pull-right">
+            <strong>Sort by: </strong>
+            @Html.ActionLink("Date", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-danger loading" })
+            @Html.ActionLink("Age", "All", new { sortOrder = ViewBag.AgeSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-success loading" })
+            @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter, type = ViewBag.Type }, new { @class = "btn btn-warning loading" })
+        </span>
+    </div>
+    <div class="row dropdown">
+        <button class="btn btn-success loading dropdown-toggle" type="button" data-toggle="dropdown">
+            @if (ViewBag.Type != null)
+            {
+                @ViewBag.Type<span>s</span>
+            }
+            else
+            {
+                <span>Dog or Cat</span>
+            }
+            <span class="caret"></span>
+        </button>
+        <ul class="pull-left dropdown-menu">
+            <li>
+                @Html.ActionLink("Dog", "All", new { type = "Dog", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </li>
+            <li>
+                @Html.ActionLink("Cat", "All", new { type = "Cat", sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </li>
+            <li>
+                @Html.ActionLink("Both", "All", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        @Html.Partial("_AllTable", Model)
+        <div id="ajax-search-results"></div>
+        @Html.Partial("_Paging", Model)
+    </div>
+</section>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryajax")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/customsearch")
+}

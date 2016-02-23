@@ -12,14 +12,19 @@
     using Models.Animal;
     using Models.Organization;
     using Common.Constants;
+    using Services;
     public class HomeController : Controller
     {
+        private const int TimeForCache = (10 * 60);
+
         private IAnimalService animals;
 
         private IOrganizationService organizations;
+        private ICacheService cacheService;
 
-        public HomeController(IAnimalService animals, IOrganizationService organizations)
+        public HomeController(IAnimalService animals, IOrganizationService organizations, ICacheService cacheService)
         {
+            this.cacheService = cacheService;
             this.animals = animals;
             this.organizations = organizations;
         }
@@ -29,21 +34,32 @@
             return View();
         }
 
+
+        [HttpGet]
+        [ChildActionOnly]
         public ActionResult GetLastCats()
-        {
-            var cats = animals.GetLatestCats(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>();
+        { 
+            var cats = this.cacheService.Get("Cats", () => this.animals.GetLatestCats(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>().ToList(), TimeForCache);
             return this.PartialView("_LatestAnimals", cats);
         }
 
+
+        [HttpGet]
+        [ChildActionOnly]
         public ActionResult GetLastDogs()
         {
-            var dogs = animals.GetLatestDogs(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>();
+            var dogs = this.cacheService.Get("Dogs", () => this.animals.GetLatestDogs(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>().ToList(), TimeForCache);
             return this.PartialView("_LatestAnimals", dogs);
         }
 
+        [HttpGet]
+        [ChildActionOnly]
         public ActionResult GetOrganizationWithMostAnimals()
         {
-            var orgs = organizations.OrganizationWithMostAnimals(ControllersConst.TopOrganizationsNumber).ProjectTo<OrganizationsListView>();
+            var orgs = this.cacheService
+                .Get("Organizations", () => this.organizations
+                .OrganizationWithMostAnimals(ControllersConst.TopOrganizationsNumber)
+                .ProjectTo<OrganizationsListView>().ToList(), TimeForCache);
             return this.PartialView("_OrgsMostAnimals", orgs);
         }
     }
