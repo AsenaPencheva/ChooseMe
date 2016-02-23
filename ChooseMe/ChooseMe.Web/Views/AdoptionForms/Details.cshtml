@@ -1,0 +1,41 @@
+﻿@model ChooseMe.Web.Models.Forms.AdoptionFormDetailViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="text-center well col-md-6">
+    <div><strong>Animal name: </strong>@Model.AnimalName</div><hr />
+    <div>
+        <strong>Address: </strong>@Model.Address
+    </div>
+    <hr />
+    <div>
+        <strong>Are you owning other animal? </strong>@Html.DisplayFor(m => m.IsOwningOtherAnimals, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>If yes, describe it. </strong>@Model.AnimalsDescription
+    </div><hr />
+    <div>
+        <strong>Do you have some expirience of taking care of animals? </strong>@Model.ExpirienceWithAnimals
+    </div><hr />
+    <div>
+        <strong>Residence type: </strong>@Model.ResidenceType
+    </div><hr />
+    <div>
+        <strong>Do you live with kids? </strong>@Html.DisplayFor(m => m.IsKidsInHome, "Check")
+    </div><hr />
+    <div>
+        <strong>If yes, how old are they? </strong>@Model.KidsDescription
+    </div><hr />
+    <div>
+        <strong>What do you think about castration? </strong>@Model.AttitudeAboutCastration
+    </div><hr />
+    <div>
+        <strong>Do you agree to give us information about the adopted? </strong>@Html.DisplayFor(m => m.IsHomecheckAndContactAllowed, "Check")
+    </div><hr />
+</div>
+<div class="clearfix"></div>

@@ -1,5 +1,6 @@
 ﻿@model ChooseMe.Web.Models.Forms.FormsListView
 @using ChooseMe.Common.Constants
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "ListViewForms";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,5 +14,5 @@
 }
 else if(User.IsInRole(ControllersConst.AdopterRole))
 {
-
+    @Html.Action("AllByAdopter", "VolunteersForm", new { area = "", id = User.Identity.GetUserId()})
 }

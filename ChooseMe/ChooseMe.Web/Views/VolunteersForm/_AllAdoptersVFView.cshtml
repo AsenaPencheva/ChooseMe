@@ -1,11 +1,11 @@
-﻿@model PagedList.PagedList<ChooseMe.Web.Models.Forms.AdoptionFormsAdopterListViewModel>
+﻿@model PagedList.PagedList<ChooseMe.Web.Models.Forms.VolunteerFormsAdopterListViewModel>
 <table class="table table-striped text-center">
     <tr>
         <th class="text-center">
             From
         </th>
         <th class="text-center">
-            Animal Name
+            Organization Name
         </th>
         <th class="text-center">
             More
@@ -20,20 +20,20 @@
     }
     else
     {
-        foreach (var af in Model)
+        foreach (var vf in Model)
         {
             <tr>
                 <td>
-                    @af.CreatedOn
+                    @vf.CreatedOn
                 </td>
                 <td>
-                    <a href="~/Animals/Details/@af.AnimalId">@af.AnimalName</a>
+                    <a href="~/Organizations/Details/@vf.OrganizationId">@vf.OrganizationName</a>
                 </td>
                 <td>
-                    <a href="~/AdoptionForms/Details/@af.Id">Full form</a>
+                    <a href="~/VolunteersForm/Details/@vf.Id">Full form</a>
                 </td>
                 <td>
-                    @Html.ActionLink("X", "Delete", "AdoptionForm", new { area = "", id = @af.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("X", "Delete", "VolunteerForm", new { area = "", id = @vf.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

@@ -245,8 +245,10 @@
     <Compile Include="Models\Adopter\AdopterDetailView.cs" />
     <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
+    <Compile Include="Models\Forms\AdoptionFormDetailViewModel.cs" />
     <Compile Include="Models\Forms\AdoptionFormsAdopterListViewModel.cs" />
     <Compile Include="Models\Forms\FormsListView.cs" />
+    <Compile Include="Models\Forms\VolunteerFormDetailViewModel.cs" />
     <Compile Include="Models\Forms\VolunteerFormsAdopterListViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Organization\OrganizationDetailView.cs" />
@@ -365,6 +367,9 @@
     <Content Include="Views\VolunteersForm\ListViewForms.cshtml" />
     <Content Include="Views\AdoptionForms\ListViewAdoptionForms.cshtml" />
     <Content Include="Views\AdoptionForms\_AllAdoptersAFView.cshtml" />
+    <Content Include="Views\VolunteersForm\_AllAdoptersVFView.cshtml" />
+    <Content Include="Views\AdoptionForms\Details.cshtml" />
+    <Content Include="Views\VolunteersForm\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

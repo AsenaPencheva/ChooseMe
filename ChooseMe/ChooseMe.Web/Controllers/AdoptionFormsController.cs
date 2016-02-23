@@ -5,6 +5,7 @@
     using Models.Forms;
     using PagedList;
     using Services.Contracts;
+    using System.Linq;
     using System.Web.Mvc;
 
     public class AdoptionFormsController:Controller
@@ -23,15 +24,16 @@
             return this.PartialView("_AllAdoptersAFView", forms.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
          
-        public ActionResult ListViewAdoptionForms(int id)
+        public ActionResult ListViewAdoptionForms(string id)
         {
             return this.View(id);
         }
 
-        public ActionResult AllByAnimal(int id, int? page)
+        public ActionResult AllByAnimal(string id, int? page)
         {
+            int idInt = int.Parse(id);
             int pageNumber = (page ?? 1);
-            var result = adoptionForms.GetAllByAnimalId(id).ProjectTo<FormsListView>();
+            var result = adoptionForms.GetAllByAnimalId(idInt).ProjectTo<FormsListView>();
             return this.PartialView("_AllFormOrganizationView", result.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
@@ -40,5 +42,14 @@
             this.adoptionForms.DeleteAdoptionForm(id);
             return this.View("ListViewAdoptionForms");
         }
+        public ActionResult Details(int id)
+        {
+            var form = this.adoptionForms
+                .GetById(id)
+                .ProjectTo<AdoptionFormDetailViewModel>()
+                .FirstOrDefault();
+            return this.View(form);
+        }
+
     }
 }

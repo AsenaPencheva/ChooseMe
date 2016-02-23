@@ -1,0 +1,73 @@
+﻿@model ChooseMe.Web.Models.Forms.VolunteerFormDetailViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="text-center well">
+    <div>
+        <strong>
+            Organization name:
+        </strong>
+        @Model.OrganizationName
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you be a foster home?
+        </strong>
+        @Html.DisplayFor(m => m.CanBeFosterHome, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you help with administrativ work?
+        </strong>
+        @Html.DisplayFor(m => m.CanHelpWithAdministrationWork, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you help with organization of events?
+        </strong>
+        @Html.DisplayFor(m => m.CanHelpWithEvents, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you help with online presence of the organization and it's animals?
+        </strong>
+        @Html.DisplayFor(m => m.CanHelpWithOnlinePresence, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you help with the transportation of the animals?
+        </strong>
+        @Html.DisplayFor(m => m.CanHelpWithTransportingAnimal, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you take care of baby animals?
+        </strong>
+        @Html.DisplayFor(m => m.CanTakeCareOfBabyAnimal, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Can you take care of handicapped animals?
+        </strong>
+        @Html.DisplayFor(m => m.CanTakeCareOfHandicappedAnimal, "Check")
+    </div>
+    <hr />
+    <div>
+        <strong>
+            Other:
+        </strong>
+        @Model.Other
+    </div>
+</div>
+<div class="clearfix"></div>

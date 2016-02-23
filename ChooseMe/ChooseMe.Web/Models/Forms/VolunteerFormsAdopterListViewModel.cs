@@ -14,6 +14,8 @@
         [DataType(DataType.Date)]
         public DateTime CreatedOn { get; set; }
 
+        public string OrganizationId { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<VolunteerForm, VolunteerFormsAdopterListViewModel>()

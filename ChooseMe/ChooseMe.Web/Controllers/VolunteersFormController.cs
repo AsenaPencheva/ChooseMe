@@ -19,10 +19,11 @@
             this.volunteerForms = volunteerForms;
         }
 
-        public ActionResult AllByAdopter(string id)
+        public ActionResult AllByAdopter(string id, int? page)
         {
+            int pageNumber = (page ?? 1);
             var forms =  volunteerForms.GetAllByAdopterId(id).ProjectTo<VolunteerFormsAdopterListViewModel>();
-            return this.PartialView("_AllAdoptersVFView", forms);
+            return this.PartialView("_AllAdoptersVFView", forms.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
         public ActionResult AllByOrganization(int? page)
@@ -36,6 +37,15 @@
         public ActionResult ListViewForms()
         {
             return this.View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var form = this.volunteerForms
+                .GetById(id)
+                .ProjectTo<VolunteerFormDetailViewModel>()
+                .FirstOrDefault();
+            return this.View(form);
         }
 
         public ActionResult Delete(int id)

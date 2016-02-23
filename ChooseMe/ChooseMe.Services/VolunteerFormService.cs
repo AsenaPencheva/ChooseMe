@@ -4,6 +4,7 @@
     using Models;
     using ChooseMe.Services.Contracts;
     using Data.Repositories;
+    using System;
 
     public class VolunteerFormService : IVolunteerFormService
     {
@@ -46,12 +47,11 @@
                   .OrderByDescending(vf => vf.CreatedOn);
         }
 
-        public VolunteerForm GetById(int id)
+        public IQueryable<VolunteerForm> GetById(int id)
         {
             return this.volunteerForms
                 .All()
-                .Where(f => f.Id == id)
-                .FirstOrDefault();
+                .Where(f => f.Id == id);
         }
     }
 }

@@ -9,7 +9,7 @@
 
         IQueryable<AdoptionForm> GetAllByUserId(string id);
 
-        AdoptionForm GetById(int id);
+        IQueryable<AdoptionForm> GetById(int id);
 
         void AddNew(AdoptionForm form);
 

@@ -46,12 +46,11 @@
                 .OrderByDescending(af => af.CreatedOn);
         }
 
-        public AdoptionForm GetById(int id)
+        public IQueryable<AdoptionForm> GetById(int id)
         {
             return this.adoptionForms
                 .All()
-                .Where(af => af.Id == id)
-                .FirstOrDefault();
+                .Where(af => af.Id == id);
         }
     }
 }

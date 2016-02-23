@@ -73,6 +73,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,6 +94,7 @@
     <Compile Include="Contracts\IAdopterService.cs" />
     <Compile Include="Contracts\IAdoptionFormService.cs" />
     <Compile Include="Contracts\IAnimalService.cs" />
+    <Compile Include="Contracts\ICacheService.cs" />
     <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Contracts\IGodparentService.cs" />
     <Compile Include="Contracts\IMessageService.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="Contracts\IPhotoService.cs" />
     <Compile Include="Contracts\IVolunteerFormService.cs" />
     <Compile Include="GodparentService.cs" />
+    <Compile Include="HttpCacheService.cs" />
     <Compile Include="MessageService.cs" />
     <Compile Include="OrganizationService.cs" />
     <Compile Include="PhotoService.cs" />
@@ -122,6 +126,9 @@
       <Project>{97d0732c-5ea3-4cc6-9903-8012bdf99104}</Project>
       <Name>ChooseMe.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

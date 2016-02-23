@@ -9,7 +9,7 @@
 
         IQueryable<VolunteerForm> GetAllByAdopterId(string id);
 
-        VolunteerForm GetById(int id);
+        IQueryable<VolunteerForm> GetById(int id);
 
         VolunteerForm AddNew(VolunteerForm form);
 
