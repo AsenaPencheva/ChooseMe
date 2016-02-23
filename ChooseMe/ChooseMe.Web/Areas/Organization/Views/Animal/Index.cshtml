@@ -1,0 +1,30 @@
+﻿<h2 class="text-center">My animals</h2>
+<br/>
+<br/>
+@(Html.Kendo().Grid<ChooseMe.Web.Areas.Organization.Models.Animal.MyAnimalsViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Type);
+          columns.Bound(c => c.Name);
+          columns.Bound(c => c.Gender);
+          columns.Bound(c => c.DateOfBirth);
+          columns.Bound(c => c.Story);
+          columns.Bound(c => c.Disease);
+          columns.Bound(c => c.IsKidsFriendly);
+          columns.Bound(c => c.IsDogsFriendly);
+          columns.Bound(c => c.IsCatsFriendly);
+          columns.Bound(c => c.IsCastraited);
+          columns.Bound(c => c.IsVaccinated);
+          columns.Bound(c => c.IsChipped);
+          columns.Command(command => { command.Destroy(); }).Width(180);
+      })
+      .Pageable()
+      .Sortable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("AnimalsRead", "Animal"))
+          .Destroy(destroy => destroy.Action("AnimalsDestroy", "Animal")).ServerOperation(true)
+      )
+)

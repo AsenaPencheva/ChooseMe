@@ -182,3 +182,5 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Microsoft.Owin.
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\obj\Debug\ChooseMe.Web.csprojResolveAssemblyReference.cache
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\obj\Debug\ChooseMe.Web.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\obj\Debug\ChooseMe.Web.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Kendo.Mvc.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Web\bin\Kendo.Mvc.xml
