@@ -1,0 +1,66 @@
+﻿@model ChooseMe.Web.Areas.Adopter.Models.AdopterProfileViewModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profile</h2>
+
+<br><br>
+<div class="container-fluid well span6 text-center" id="profile">
+    <div class="row-fluid">
+        <div class="span2">
+            <img src=@Model.ImageURL class="img-circle" width="300">
+        </div>
+        <br />
+        <br />
+        <div class="span2 btn-group col-md-6">
+            <div class="btn-group col-md-8">
+                <a class="btn dropdown-toggle btn-danger col-md-8" data-toggle="dropdown" href="#">
+                    Forms
+                    <span class="icon-cog icon-white"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><span class="icon-wrench"></span> Adoption forms</a></li>
+                    <li><a href="#"><span class="icon-trash"></span> Volunteer forms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        @using (Html.BeginForm("Update", "Adopter", FormMethod.Post, new { @class = "form-horizontal text-center", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="span8">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ImageURL, new { @class = "col-md-5 control-label" })
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.ImageURL, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.FirstName, new { @class = "col-md-5 control-label pull-left text-left" })
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LastName, new { @class = "col-md-5 control-label pull-left text-left" })
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-5 control-label pull-left text-left" })
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+                <input type="submit" class="btn btn-warning loading" value="Update" />
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,54 @@
+﻿@model ChooseMe.Web.Areas.Organization.Models.Organization.OrganizationProfileViewModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Profile</h2>
+<br/>
+<img src=@Model.ImageURL class="img-rounded col-md-4 pull-left" width="200px" />
+<div class="col-md-6 pull-left">
+    @using (Html.BeginForm("Update", "Organization", FormMethod.Post, new { @class = "form-horizontal text-center", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="text-center">
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-5 control-label pull-left text-left" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-5 control-label pull-left text-left" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ImageURL, new { @class = "col-md-5 control-label pull-left text-left" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.ImageURL, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.IsLookingForVolunteers, new { @class = "col-md-5 control-label pull-left text-left" })
+                <div class="col-md-5">
+                    @Html.CheckBoxFor(m => m.IsLookingForVolunteers, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description, new { @class = "col-md-5 control-label pull-left text-left" })
+                <div class="col-md-5">
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                </div>
+            </div>
+            <input type="submit" value="Update" class="btn btn-success loading" />
+        </div>
+    }
+</div>
+<div class="clearfix"></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

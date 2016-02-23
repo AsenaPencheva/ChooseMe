@@ -1,0 +1,103 @@
+﻿@model IEnumerable<ChooseMe.Web.Areas.Organization.Models.Animal.MyAnimalsViewModel>
+
+<table class="table table-striped text-center">
+    <thead>
+        <th class="text-center">
+            Added on
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Name", "Update", "Animal", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th class="text-center">
+            Gender
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Type", "Update", "Animal", new { sortOrder = ViewBag.TypeSortParam, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th class="text-center">
+            @Html.ActionLink("Date of Birth", "Update", "Animal", new { sortOrder = ViewBag.DateBirthSortParam, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th class="text-center">
+            Story
+        </th>
+        <th class="text-center">
+            Disease
+        </th>
+        <th class="text-center">
+            Is kids friendly?
+        </th>
+        <th class="text-center">
+            Is dogs friendly?
+        </th>
+        <th class="text-center">
+            Is cats friendly?
+        </th>
+        <th class="text-center">
+            Fur color
+        </th>
+        <th class="text-center">
+            Is longhaired?
+        </th>
+        <th class="text-center">
+            Is castrated?
+        </th>
+        <th class="text-center">
+            Is vaccinated?
+        </th>
+        <th class="text-center">
+            Is chipped?
+        </th>
+    </thead>
+    <tbody>
+        @foreach (var animal in Model)
+        {
+            <tr>
+                <td>
+                    @animal.AddedOn
+                </td>
+                <td>
+                    <a href="~/Organizations/Details/@animal.Id">@animal.Name</a>
+                </td>
+                <td>
+                    @animal.Gender
+                </td>
+                <td>
+                    @animal.Type
+                </td>
+                <td>
+                    @animal.DateOfBirth
+                </td>
+                <th class="text-center">
+                    @animal.Story
+                </th>
+                <th class="text-center">
+                    @animal.Disease
+                </th>
+                <th class="text-center">
+                    Is kids friendly?@Html.DisplayFor(m => org.IsLookingForVolunteers, "Check")
+                </th>
+                <th class="text-center">
+                    Is dogs friendly?
+                </th>
+                <th class="text-center">
+                    Is cats friendly?
+                </th>
+                <th class="text-center">
+                    Fur color
+                </th>
+                <th class="text-center">
+                    Is longhaired?
+                </th>
+                <th class="text-center">
+                    Is castrated?
+                </th>
+                <th class="text-center">
+                    Is vaccinated?
+                </th>
+                <th class="text-center">
+                    Is chipped?
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
