@@ -302,6 +302,6 @@ h3>strong>a.home-link{
     text-decoration: none!important;
 }
 
-body > div.container.body-content > div{
+body > div.container.body-content > div#profile{
     background-image: url("../Images/profile.jpg");
 }

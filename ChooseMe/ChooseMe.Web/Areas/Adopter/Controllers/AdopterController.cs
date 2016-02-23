@@ -18,7 +18,7 @@
         }
 
         [HttpGet]
-        public ActionResult Profile()
+        public ActionResult Update()
         {
             var id = this.User.Identity.GetUserId();
             var user = adopters.GetById(id);
@@ -29,7 +29,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Profile(AdopterProfileViewModel updated)
+        public ActionResult Update(AdopterProfileViewModel updated)
         {
             if (updated != null && ModelState.IsValid)
             {

@@ -36,9 +36,25 @@
                 .Where(o => o.Id == id);
         }
 
-        public IQueryable<Organization> UpdateOrganization(Organization updatedOrganization)
+        public IQueryable<Organization> UpdateOrganization(Organization updatedOrganization, Organization currentOrganization)
         {
-            this.organization.Update(updatedOrganization);
+            if (updatedOrganization.Name != currentOrganization.Name)
+            {
+                currentOrganization.Name = updatedOrganization.Name;
+            }
+            if (updatedOrganization.Description != currentOrganization.Description)
+            {
+                currentOrganization.Description = updatedOrganization.Description;
+            }
+            if (updatedOrganization.Email != currentOrganization.Email)
+            {
+                currentOrganization.Email = updatedOrganization.Email;
+            }
+            if (updatedOrganization.ImageURL != currentOrganization.ImageURL)
+            {
+                currentOrganization.ImageURL = updatedOrganization.ImageURL;
+            }
+
             this.organization.SaveChanges();
 
             return this.organization
