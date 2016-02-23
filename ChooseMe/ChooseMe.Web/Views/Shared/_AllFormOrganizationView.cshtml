@@ -1,32 +1,32 @@
 ﻿@model PagedList.PagedList<ChooseMe.Web.Models.Forms.FormsListView>
-<table class="table table-striped text-center">
-    <tr>
-        <th class="text-center">
-            From
-        </th>
-        <th class="text-center">
-            Full name
-        </th>
-        <th class="text-center">
-            Email
-        </th>
-        <th class="text-center">
-            Phone number
-        </th>
-        <th class="text-center">
-            More
-        </th>
-        <th class="text-center">
-            Delete
-        </th>
-    </tr>
-    @if (Model.Count() == 0)
-    {
-        <h1>You don't have volunteers form</h1>
-    }
-    else
-    {
-        foreach (var af in Model)
+@if (Model.Count() == 0)
+{
+    <h1>You don't have  forms</h1>
+}
+else
+{
+    <table class="table table-striped text-center">
+        <tr>
+            <th class="text-center">
+                From
+            </th>
+            <th class="text-center">
+                Full name
+            </th>
+            <th class="text-center">
+                Email
+            </th>
+            <th class="text-center">
+                Phone number
+            </th>
+            <th class="text-center">
+                More
+            </th>
+            <th class="text-center">
+                Delete
+            </th>
+        </tr>
+        @foreach (var af in Model)
         {
             <tr>
                 <td>
@@ -42,14 +42,14 @@
                     @af.PhoneNumber
                 </td>
                 <td>
-                    <a href="~/Views/Forms/Details/@af.Id">Full form</a>
+                    <a href="~/AdoptionForms/Details/@af.Id">Full form</a>
                 </td>
                 <td>
-                    @Html.ActionLink("X", "Delete", "VolunteersForm", new { area = "", id = @af.Id}, new { @class ="btn btn-danger"})
+                    @Html.ActionLink("X", "Delete", "VolunteersForm", new { area = "", id = @af.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }
-    }
-</table>
-<div id="ajax-search-results"></div>
-@Html.Partial("_Paging")
+    </table>
+    <div id="ajax-search-results"></div>
+    @Html.Partial("_Paging")
+}

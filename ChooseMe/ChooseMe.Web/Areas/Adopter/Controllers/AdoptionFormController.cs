@@ -1,12 +1,14 @@
 ﻿namespace ChooseMe.Web.Areas.Adopter.Controllers
 {
     using ChooseMe.Models;
+    using Common.Constants;
     using Microsoft.AspNet.Identity;
     using Models;
     using Services.Contracts;
     using System.Linq;
     using System.Web.Mvc;
 
+    [Authorize(Roles = ControllersConst.AdopterRole)]
     public class AdoptionFormController : Controller
     {
         private IAdoptionFormService adoptionForms;

@@ -1,6 +1,7 @@
 ﻿@model ChooseMe.Web.Models.Animal.AnimalDetailView
 @using ChooseMe.Web.Areas.Organization.Models.Animal
 @using ChooseMe.Common.Constants
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -37,11 +38,25 @@
                             <p><small>Adoption Forms</small></p>
                             @if (User.IsInRole(ControllersConst.AdopterRole))
                             {
-                            @Html.ActionLink("Adoption form", "Create", "AdoptionForm", new { area = "Adopter", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                                if (Model.AdoptionForms.Any(af => af.UserId == User.Identity.GetUserId()))
+                                {
+                                    <h3><strong> Your form will be reviewed soon <span class="glyphicon-heart"></span></strong></h3 >
+                                }
+                                else
+                                {
+                                @Html.ActionLink("Adoption form", "Create", "AdoptionForm", new { area = "Adopter", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                                }
                             }
                             else if(User.IsInRole(ControllersConst.OrganizationRole))
                             {
-                                @Html.ActionLink("Adoption forms", "ListViewAdoptionForms", "AdoptionForms", new { area = "", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                                if (Model.OrganizationId == User.Identity.GetUserId())
+                                {
+                                    @Html.ActionLink("Adoption forms", "ListViewAdoptionForms", "AdoptionForms", new { area = "", id = Model.Id }, new { @class = "btn btn-success btn-block" })
+                                }
+                                else
+                                {
+                                    <h3><strong>More about me: </strong></h3>
+                                }
                             }
                         </div>
                         <!--/col-->
@@ -54,7 +69,17 @@
                         <div class="col-sm-4 text-center">
                             <h2><strong>@Model.Photos.Count()</strong></h2>
                             <p><small>Photos</small></p>
-                            @Html.ActionLink("Upload photo", "Upload", "Photo", new { area = "Organization", id = Model.Id }, new { @class = "btn btn-danger btn-block" })
+                            @if (Model.OrganizationId == User.Identity.GetUserId())
+                            {
+                                if (Model.Photos.Count() > 10)
+                                {
+                                    <h3><strong>Sorry, you can upload only up to 10 photos or this furry friend</strong></h3>
+                                }
+                                else
+                                {
+                                        @Html.ActionLink("Upload photo", "Upload", "Photo", new { area = "Organization", id = Model.Id }, new { @class = "btn btn-danger btn-block" })
+                                }
+                            }
                         </div>
                         </div>
                         <br/>

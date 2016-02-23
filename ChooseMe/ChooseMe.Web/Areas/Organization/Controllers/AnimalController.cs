@@ -2,6 +2,7 @@
 {
     using AutoMapper.QueryableExtensions;
     using ChooseMe.Models;
+    using Common.Constants;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Microsoft.AspNet.Identity;
@@ -15,6 +16,7 @@
     using System.Web;
     using System.Web.Mvc;
 
+    [Authorize(Roles = ControllersConst.OrganizationRole)]
     public class AnimalController:Controller
     {
         private IAnimalService animals;

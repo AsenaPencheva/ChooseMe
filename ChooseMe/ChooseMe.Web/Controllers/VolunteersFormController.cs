@@ -10,6 +10,7 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    [Authorize]
     public class VolunteersFormController:Controller
     {
         private IVolunteerFormService volunteerForms;
@@ -19,6 +20,7 @@
             this.volunteerForms = volunteerForms;
         }
 
+        [Authorize(Roles = ControllersConst.AdopterRole)]
         public ActionResult AllByAdopter(string id, int? page)
         {
             int pageNumber = (page ?? 1);
@@ -26,6 +28,7 @@
             return this.PartialView("_AllAdoptersVFView", forms.ToPagedList(pageNumber, ControllersConst.PageSizeOrg));
         }
 
+        [Authorize(Roles = ControllersConst.OrganizationRole)]
         public ActionResult AllByOrganization(int? page)
         {
             int pageNumber = (page ?? 1);

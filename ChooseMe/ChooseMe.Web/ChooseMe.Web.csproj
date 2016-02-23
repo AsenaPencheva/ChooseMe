@@ -458,7 +458,6 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Adopter\Views\Shared\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
-    <Folder Include="Views\MyAnimals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -8,6 +8,9 @@
     using AutoMapper.QueryableExtensions;
     using System.Linq;
     using AutoMapper;
+    using Common.Constants;
+
+    [Authorize(Roles = ControllersConst.AdopterRole)]
     public class AdopterController:Controller
     {
         private IAdopterService adopters;

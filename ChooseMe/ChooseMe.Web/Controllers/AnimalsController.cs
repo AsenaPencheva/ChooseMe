@@ -12,6 +12,7 @@
     using Common.Enums;
     using System.Net;
 
+    [Authorize]
     public class AnimalsController:Controller
     {
         private IAnimalService animals;
@@ -22,7 +23,6 @@
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, string type, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -55,7 +55,6 @@
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult Details(int id)
         {
             var animal = animals

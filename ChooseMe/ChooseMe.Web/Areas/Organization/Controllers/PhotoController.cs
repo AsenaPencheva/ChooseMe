@@ -1,6 +1,7 @@
 ﻿namespace ChooseMe.Web.Areas.Organization.Controllers
 {
     using ChooseMe.Models;
+    using Common.Constants;
     using Models.Animal;
     using Models.Photo;
     using Services.Contracts;
@@ -11,6 +12,7 @@
     using System.Web;
     using System.Web.Mvc;
 
+    [Authorize(Roles = ControllersConst.OrganizationRole)]
     public class PhotoController : Controller
     {
         private IPhotoService photos;

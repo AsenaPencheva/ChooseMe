@@ -8,7 +8,8 @@
     using System.Linq;
     using System.Web.Mvc;
     using ChooseMe.Models;
-
+    using Common.Constants;
+    [Authorize(Roles = ControllersConst.OrganizationRole)]
     public class OrganizationController:Controller
     {
         private IOrganizationService organizations;

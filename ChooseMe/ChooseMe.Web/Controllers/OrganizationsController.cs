@@ -10,7 +10,7 @@
     using System.Linq;
     using System.Web.Mvc;
 
-
+    [Authorize]
     public class OrganizationsController:Controller
     {
         private IOrganizationService organizations;
@@ -21,7 +21,6 @@
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult All(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -54,7 +53,6 @@
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult Details(string id)
         {
             var organization = organizations.GetById(id).ProjectTo<OrganizationDetailView>().FirstOrDefault();
