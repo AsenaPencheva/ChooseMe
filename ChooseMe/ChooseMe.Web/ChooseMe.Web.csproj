@@ -225,6 +225,7 @@
     <Compile Include="Controllers\AdoptersController.cs" />
     <Compile Include="Controllers\AdoptionFormsController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
@@ -321,6 +322,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\cats-meow_1250010i.jpg" />
     <Content Include="Images\cover.jpg" />
+    <Content Include="Images\Error\Error400.jpg" />
+    <Content Include="Images\Error\Error404.jpg" />
+    <Content Include="Images\Error\Error500.jpg" />
     <Content Include="Images\female.gif" />
     <Content Include="Images\hands-vol.jpg" />
     <Content Include="Images\male.gif" />
@@ -450,6 +454,9 @@
     <Content Include="Views\VolunteersForm\Details.cshtml" />
     <Content Include="Scripts\KendoUI\kendo.all.min.js.map" />
     <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Views\Error\Error400.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
