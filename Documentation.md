@@ -42,3 +42,9 @@ Registration of users in different roles is available
 <h3>Usage of Kendo UI for ASP.NET MVC</h3>
 </hr>
 <p>The lib is on trial version and it is not legal to use it unless purchased or also downloaded as trial <a href="http://www.telerik.com/kendo-ui">Kend UI</a></p>
+Screenshots:
+<img src="ChooseMe/ChooseMe.Web/Images/Screenshots/1.jpg" />
+<img src="ChooseMe/ChooseMe.Web/Images/Screenshots/2.jpg" />
+<img src="ChooseMe/ChooseMe.Web/Images/Screenshots/3.jpg" />
+<img src="ChooseMe/ChooseMe.Web/Images/Screenshots/4.jpg" />
+<img src="ChooseMe/ChooseMe.Web/Images/Screenshots/5.jpg" />
