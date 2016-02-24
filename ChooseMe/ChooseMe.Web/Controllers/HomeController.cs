@@ -48,7 +48,9 @@
         [ChildActionOnly]
         public ActionResult GetLastDogs()
         {
-            var dogs = this.cacheService.Get("Dogs", () => this.animals.GetLatestDogs(ControllersConst.TopAnimalsNumber).ProjectTo<AnimalsListView>().ToList(), TimeForCache);
+            var dogs = this.cacheService.Get("Dogs", () => this.animals
+            .GetLatestDogs(ControllersConst.TopAnimalsNumber)
+            .ProjectTo<AnimalsListView>().ToList(), TimeForCache);
             return this.PartialView("_LatestAnimals", dogs);
         }
 
