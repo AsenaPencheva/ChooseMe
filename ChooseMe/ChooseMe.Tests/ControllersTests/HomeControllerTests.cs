@@ -9,7 +9,7 @@
     using Web.Areas.Admin.Models;
     using Web.Models.Organization;
     [TestClass]
-    public class Home
+    public class HomeControllerTests
     {
         private HomeController controller;
         private IAnimalService animals;
@@ -35,27 +35,11 @@
         }
 
         [TestMethod]
-        public void TestIfLastCatsPartialIsReturned()
-        {
-            this.controller.WithCallTo(c => c.GetLastCats())
-                .ShouldRenderPartialView("_LatestAnimals")
-                .WithModel<List<AnimalsListView>>();
-        }
-
-      /*  [TestMethod]
-        public void TestIfLastDogsPartialIsReturned()
-        {
-            this.controller.WithCallTo(c => c.GetLastDogs())
-                .ShouldRenderPartialView("_LatestAnimals")
-                .WithModel<List<AnimalsListView>>();
-        }
-
-        [TestMethod]
         public void TestIfOrgsMostAnimalslIsReturned()
         {
             this.controller.WithCallTo(c => c.GetOrganizationWithMostAnimals())
                 .ShouldRenderPartialView("_OrgsMostAnimals")
                 .WithModel<IEnumerable<OrganizationsListView>>();
-        }*/
+        }
     }
 }

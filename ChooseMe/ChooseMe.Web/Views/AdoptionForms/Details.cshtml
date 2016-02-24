@@ -9,7 +9,7 @@
 <div class="text-center well col-md-6">
     <div><strong>Animal name: </strong>@Model.AnimalName</div><hr />
     <div>
-        <strong>Address: </strong>@Model.Address
+        <strong>Address: </strong>@Html.Raw(Model.Address)
     </div>
     <hr />
     <div>
@@ -17,10 +17,10 @@
     </div>
     <hr />
     <div>
-        <strong>If yes, describe it. </strong>@Model.AnimalsDescription
+        <strong>If yes, describe it. </strong>@Html.Raw(Model.AnimalsDescription)
     </div><hr />
     <div>
-        <strong>Do you have some expirience of taking care of animals? </strong>@Model.ExpirienceWithAnimals
+        <strong>Do you have some expirience of taking care of animals? </strong>@Html.Raw(Model.ExpirienceWithAnimals)
     </div><hr />
     <div>
         <strong>Residence type: </strong>@Model.ResidenceType
@@ -29,10 +29,10 @@
         <strong>Do you live with kids? </strong>@Html.DisplayFor(m => m.IsKidsInHome, "Check")
     </div><hr />
     <div>
-        <strong>If yes, how old are they? </strong>@Model.KidsDescription
+        <strong>If yes, how old are they? </strong>@Html.Raw(Model.KidsDescription)
     </div><hr />
     <div>
-        <strong>What do you think about castration? </strong>@Model.AttitudeAboutCastration
+        <strong>What do you think about castration? </strong>@Html.Raw(Model.AttitudeAboutCastration)
     </div><hr />
     <div>
         <strong>Do you agree to give us information about the adopted? </strong>@Html.DisplayFor(m => m.IsHomecheckAndContactAllowed, "Check")

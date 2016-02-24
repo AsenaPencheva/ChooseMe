@@ -21,9 +21,9 @@
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">
                             <em><a href=@Model.OrganizationId>@Model.Organization.Name</a></em>
-                            <h2>@Model.Name</h2>
+                            <h2>@Html.Raw(Model.Name)</h2>
                             <h5><em>@Model.Type</em>@Html.DisplayFor(m => m.Gender, "Gender")</h5>
-                            <p>@Model.Story</p>
+                            <p>@Html.Raw(Model.Story)</p>
                             <p>@Html.DisplayFor(m => m.Disease, "Disease")</p>
                             <p><em>@Html.DisplayFor(m => m.Age, "Age")</em></p>
                             <p>Fur: @Model.FurColor <em>@Html.DisplayFor(m => m.IsLonghaired, "IsLonghaired")</em></p>
@@ -59,12 +59,11 @@
                                 }
                             }
                         </div>
-                        <!--/col-->
-                        <div class="col-xs-12 col-sm-4 text-center">
+                       <!--<div class="col-xs-12 col-sm-4 text-center">
                             <h2><strong>@Model.Comments.Count()</strong></h2>
                             <p><small>Comments</small></p>
                             <button class="btn btn-info btn-block"><span class="glyphicon glyphicon-pencil"></span> Comments</button>
-                        </div>
+                        </div>-->
                         <!--/col-->
                         <div class="col-sm-4 text-center">
                             <h2><strong>@Model.Photos.Count()</strong></h2>

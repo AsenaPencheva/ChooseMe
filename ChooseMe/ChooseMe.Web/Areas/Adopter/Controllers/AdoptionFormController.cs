@@ -14,12 +14,14 @@
         private IAdoptionFormService adoptionForms;
         private IAnimalService animals;
         private IAdopterService adopters;
+        protected ISanitizer sanitizeService;
 
-        public AdoptionFormController(IAdoptionFormService adoptionForms, IAnimalService animals, IAdopterService adopters)
+        public AdoptionFormController(IAdoptionFormService adoptionForms, IAnimalService animals, IAdopterService adopters, ISanitizer sanitizeService)
         {
             this.adoptionForms = adoptionForms;
             this.animals = animals;
             this.adopters = adopters;
+            this.sanitizeService = sanitizeService;
         }
 
         [HttpGet]
@@ -34,6 +36,16 @@
         {
             if (model != null && ModelState.IsValid)
             {
+                model.AnimalsDescription = this.sanitizeService.Sanitize(model.AnimalsDescription);
+
+                model.ExpirienceWithAnimals = this.sanitizeService.Sanitize(model.ExpirienceWithAnimals);
+
+                model.KidsDescription = this.sanitizeService.Sanitize(model.KidsDescription);
+
+                model.Address = this.sanitizeService.Sanitize(model.Address);
+
+                model.AttitudeAboutCastration = this.sanitizeService.Sanitize(model.AttitudeAboutCastration);
+
                 var newAdoptionForm = AutoMapper.Mapper.Map<AdoptionForm>(model);
 
                 newAdoptionForm.AnimalId = id;

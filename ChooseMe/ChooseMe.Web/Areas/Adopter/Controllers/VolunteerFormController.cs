@@ -14,12 +14,14 @@
         private IVolunteerFormService volunteers;
         private IOrganizationService organizations;
         private IAdopterService adopters;
+        protected ISanitizer sanitizeService;
 
-        public VolunteerFormController(IVolunteerFormService volunteers, IOrganizationService organizations, IAdopterService adopters)
+        public VolunteerFormController(IVolunteerFormService volunteers, IOrganizationService organizations, IAdopterService adopters, ISanitizer sanitizeService)
         {
             this.volunteers = volunteers;
             this.organizations = organizations;
             this.adopters = adopters;
+            this.sanitizeService = sanitizeService;
         }
 
         [HttpGet]
@@ -34,6 +36,8 @@
         {
             if (model != null && ModelState.IsValid)
             {
+                model.Other = this.sanitizeService.Sanitize(model.Other);
+
                 var newVolunteerForm = AutoMapper.Mapper.Map<VolunteerForm>(model);
 
                 newVolunteerForm.OrganizationId = id;

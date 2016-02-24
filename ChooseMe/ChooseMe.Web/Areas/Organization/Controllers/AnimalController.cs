@@ -21,11 +21,13 @@
     {
         private IAnimalService animals;
         private IOrganizationService organizations;
+        protected ISanitizer sanitizeService;
 
-        public AnimalController(IAnimalService animals, IOrganizationService organizations)
+        public AnimalController(IAnimalService animals, IOrganizationService organizations, ISanitizer sanitizeService)
         {
             this.animals = animals;
             this.organizations = organizations;
+            this.sanitizeService = sanitizeService;
         }
 
         [HttpGet]
@@ -40,6 +42,12 @@
         {
             if (model != null && ModelState.IsValid)
             {
+                model.Name = this.sanitizeService.Sanitize(model.Name);
+
+                model.Story = this.sanitizeService.Sanitize(model.Story);
+
+                model.Disease = this.sanitizeService.Sanitize(model.Disease);
+
                 var newAnimal = AutoMapper.Mapper.Map<Animal>(model);
 
                 newAnimal.OrganizationId = this.User.Identity.GetUserId();

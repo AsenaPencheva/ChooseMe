@@ -26,3 +26,7 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\Ninject.
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\Ninject.Web.Common.xml
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\Ninject.Web.Mvc.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\Ninject.Web.Mvc.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\AngleSharp.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\HtmlSanitizer.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\AngleSharp.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Data\bin\Debug\HtmlSanitizer.xml

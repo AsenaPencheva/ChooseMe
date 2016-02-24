@@ -4,7 +4,7 @@
     using Infrastructure.Mappings;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-
+    using System.Web.Mvc;
     public class CreateVolunteerFormViewModel:IMapFrom<VolunteerForm>
     {
         [Required]
@@ -33,6 +33,7 @@
         [DisplayName("Can youhelp with online presence?")]
         public bool CanHelpWithOnlinePresence { get; set; }
 
+        [AllowHtml]
         public string Other { get; set; }
     }
 }

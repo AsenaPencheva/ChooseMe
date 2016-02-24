@@ -45,3 +45,7 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\Syst
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\System.Web.WebPages.xml
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\AngleSharp.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\HtmlSanitizer.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\AngleSharp.xml
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Services\bin\Debug\HtmlSanitizer.xml

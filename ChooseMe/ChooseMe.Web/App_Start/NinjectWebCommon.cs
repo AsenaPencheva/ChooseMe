@@ -71,6 +71,7 @@ namespace ChooseMe.Web.App_Start
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
 
             kernel.Bind<ICacheService>().To<HttpCacheService>();
+            kernel.Bind<ISanitizer>().To<HtmlSanitizerAdapter>();
 
             kernel.Bind(b => b
                 .From(Assemblies.DataServices)

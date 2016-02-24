@@ -9,6 +9,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Collections.Generic;
     using System.Web;
+    using System.Web.Mvc;
     public class AnimalCreateViewModel: IMapFrom<Animal>
     {
         [Required]
@@ -16,6 +17,7 @@
         public AnimalType Type { get; set; }
 
         [Required]
+        [AllowHtml]
         [MinLength(3, ErrorMessage = "The name must be at least 3 characters long!")]
         public string Name { get; set; }
 
@@ -28,8 +30,10 @@
         [DisplayName("Date of birth")]
         public DateTime DateOfBirth { get; set; }
 
+        [AllowHtml]
         public string Story { get; set; }
 
+        [AllowHtml]
         public string Disease { get; set; }
 
         [Required]

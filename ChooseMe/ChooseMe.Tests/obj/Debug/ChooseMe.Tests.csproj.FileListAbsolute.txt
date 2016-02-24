@@ -74,3 +74,5 @@ C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\bin\Debug\Microso
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\bin\Debug\PagedList.xml
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\obj\Debug\ChooseMe.Tests.dll
 C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\obj\Debug\ChooseMe.Tests.pdb
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\bin\Debug\PagedList.Mvc.dll
+C:\Users\Pav\Documents\GitHub\ChooseMe\ChooseMe\ChooseMe.Tests\bin\Debug\PagedList.Mvc.xml
