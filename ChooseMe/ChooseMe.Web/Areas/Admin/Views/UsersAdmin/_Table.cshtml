@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<ChooseMe.Web.Areas.Admin.Models.UsersListView>
+
+<table class="table table-striped text-center">
+    <th class="text-center">
+        Id
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("CreatedOn", "All",  new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("Username", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        Email
+    </th>
+
+    <th class="text-center">
+        Delete
+    </th>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>
+                @user.Id
+            </td>
+            <td>
+                @user.CreatedOn
+            </td>
+            <td>
+                @user.UserName
+            </td>
+            <td>
+                @user.Email
+            </td>
+            <td>
+                @Html.ActionLink("X", "Delete", "UsersAdmin", new { area = "Admin", id = @user.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

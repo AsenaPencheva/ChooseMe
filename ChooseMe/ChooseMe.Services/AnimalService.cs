@@ -11,7 +11,6 @@
     {
         private readonly IRepository<Animal> animals;
 
-
         public AnimalService(IRepository<Animal> animals)
         {
             this.animals = animals;

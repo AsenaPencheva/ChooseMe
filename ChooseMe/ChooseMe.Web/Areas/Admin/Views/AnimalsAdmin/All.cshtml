@@ -1,0 +1,20 @@
+﻿@model PagedList.PagedList<ChooseMe.Web.Areas.Admin.Models.AnimalsListView>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Animals</h2>
+<br/>
+<div class="row" id="search-options">
+    <span class="pull-left">
+        @Html.EditorFor(m => m, "Search")
+    </span>
+</div>
+<br/>
+@Html.Partial("_Table")
+<div id="ajax-search-results"></div>
+@Html.Partial("_Paging")
+@section scripts {
+    @Scripts.Render("~/bundles/customsearch")
+}

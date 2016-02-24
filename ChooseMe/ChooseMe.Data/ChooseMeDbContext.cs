@@ -48,6 +48,18 @@
                 .WithRequired(x => x.Organization)
                 .WillCascadeOnDelete(true);
 
+              modelBuilder
+                    .Entity<Organization>()
+                    .HasMany(x => x.VolunteerForms)
+                    .WithRequired(x => x.Organization)
+                    .WillCascadeOnDelete(true);
+
+                   modelBuilder
+                    .Entity<Animal>()
+                    .HasMany(x => x.AdoptionForms)
+                    .WithRequired(x => x.Animal)
+                    .WillCascadeOnDelete(true);
+
             base.OnModelCreating(modelBuilder);
         }
     }

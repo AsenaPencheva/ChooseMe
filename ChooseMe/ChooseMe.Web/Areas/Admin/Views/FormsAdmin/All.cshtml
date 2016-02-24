@@ -1,0 +1,20 @@
+﻿@using ChooseMe.Common.Enums;
+@model PagedList.PagedList<ChooseMe.Web.Areas.Admin.Models.FormsListView>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Forms</h2>
+<br/>
+<div class="row" id="search-options">
+    <span class="pull-left">
+        @Html.EditorFor(m => m, "Search")
+    </span>
+</div>
+@Html.Partial("_Table")
+<div id="ajax-search-results"></div>
+@Html.Partial("_Paging")
+@section scripts {
+    @Scripts.Render("~/bundles/customsearch")
+}

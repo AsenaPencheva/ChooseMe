@@ -46,6 +46,18 @@
                                 @Html.ActionLink("My Animals", "Index", "Animal", new { area = "Organization" }, null)
                             </li>
                         }
+                        if (User.IsInRole(ControllersConst.AdminRole))
+                        {
+                            <li>
+                                @Html.ActionLink("Users", "All", "UsersAdmin", new { area = "Admin"}, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Animals", "All", "AnimalsAdmin", new { area = "Admin" }, null)
+                            </li>
+                            <li>
+                                @Html.ActionLink("Forms", "All", "FormsAdmin", new { area = "Admin" }, null)
+                            </li>
+                        }
                     }
                     else
                     {

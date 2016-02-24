@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ChooseMe.Web.Areas.Admin.Models.FormsListView>
+
+<table class="table table-striped text-center">
+    <thead>
+    <th class="text-center">
+        Id
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("CreatedOn", "All",  new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("Author", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        Delete
+    </th>
+    </th>
+    @foreach (var form in Model)
+    {
+        <tr>
+            <td>
+                @form.Id
+            </td>
+            <td>
+                @form.CreatedOn
+            </td>
+            <td>
+                @form.Author
+            </td>
+            <td>
+                @Html.ActionLink("X", "Delete", "FormsAdmin", new { area = "Admin", id = @form.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

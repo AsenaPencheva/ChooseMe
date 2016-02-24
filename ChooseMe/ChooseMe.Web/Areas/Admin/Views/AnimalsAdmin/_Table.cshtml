@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ChooseMe.Web.Areas.Admin.Models.AnimalsListView>
+
+<table class="table table-striped text-center">
+    <th class="text-center">
+        Id
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("CreatedOn", "All",  new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+    </th>
+    <th class="text-center">
+        Organization
+    </th>
+    <th class="text-center">
+        Delete
+    </th>
+    @foreach (var animal in Model)
+    {
+        <tr>
+            <td>
+                @animal.Id
+            </td>
+            <td>
+                @animal.AddedOn
+            </td>
+            <td>
+                @animal.Name
+            </td>
+            <td>
+                @animal.OrganizationName
+            </td>
+            <td>
+                @Html.ActionLink("X", "Delete", "AnimalsAdmin", new { area = "Admin", id = @animal.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>

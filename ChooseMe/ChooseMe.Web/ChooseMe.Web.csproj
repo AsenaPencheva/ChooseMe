@@ -206,6 +206,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnimalsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FormsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersAdminController.cs" />
+    <Compile Include="Areas\Admin\Models\AnimalsListView.cs" />
+    <Compile Include="Areas\Admin\Models\FormsListView.cs" />
+    <Compile Include="Areas\Admin\Models\UsersListView.cs" />
     <Compile Include="Areas\Adopter\AdopterAreaRegistration.cs" />
     <Compile Include="Areas\Adopter\Controllers\AdopterController.cs" />
     <Compile Include="Areas\Adopter\Controllers\AdoptionFormController.cs" />
@@ -261,6 +267,22 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\FormsAdmin\All.cshtml" />
+    <Content Include="Areas\Admin\Views\FormsAdmin\_Table.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Adopter\Views\Adopter\Update.cshtml" />
+    <Content Include="Areas\Adopter\Views\AdoptionForm\Create.cshtml" />
+    <Content Include="Areas\Adopter\Views\VolunteerForm\Create.cshtml" />
+    <Content Include="Areas\Adopter\Views\web.config" />
+    <Content Include="Areas\Adopter\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\Create.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\Index.cshtml" />
+    <Content Include="Areas\Organization\Views\Animal\_AllTable.cshtml" />
+    <Content Include="Areas\Organization\Views\Organization\Update.cshtml" />
+    <Content Include="Areas\Organization\Views\Photo\Upload.cshtml" />
+    <Content Include="Areas\Organization\Views\web.config" />
+    <Content Include="Areas\Organization\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\KendoUI\Default\editor.png" />
@@ -338,17 +360,6 @@
     <Content Include="Scripts\App\searchAjaxScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Adopter\Views\web.config" />
-    <Content Include="Areas\Organization\Views\web.config" />
-    <Content Include="Areas\Organization\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Adopter\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Organization\Views\Animal\Create.cshtml" />
-    <Content Include="Areas\Organization\Views\Photo\Upload.cshtml" />
-    <Content Include="Areas\Adopter\Views\AdoptionForm\Create.cshtml" />
-    <Content Include="Areas\Adopter\Views\VolunteerForm\Create.cshtml" />
-    <Content Include="Areas\Adopter\Views\Adopter\Update.cshtml" />
-    <Content Include="Areas\Organization\Views\Organization\Update.cshtml" />
-    <Content Include="Areas\Organization\Views\Animal\_AllTable.cshtml" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -367,9 +378,10 @@
     <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Organization\Views\Animal\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimalsAdmin\_Table.cshtml" />
+    <Content Include="Areas\Admin\Views\UsersAdmin\_Table.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimalsAdmin\All.cshtml" />
+    <Content Include="Areas\Admin\Views\UsersAdmin\All.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -460,8 +472,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Adopter\Views\Shared\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
