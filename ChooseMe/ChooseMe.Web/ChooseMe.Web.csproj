@@ -365,6 +365,11 @@
     <Content Include="Images\paw-prints.jpg" />
     <Content Include="Images\petPicture.jpg" />
     <Content Include="Images\profile.jpg" />
+    <Content Include="Images\Screenshots\1.jpg" />
+    <Content Include="Images\Screenshots\2.jpg" />
+    <Content Include="Images\Screenshots\3.jpg" />
+    <Content Include="Images\Screenshots\4.jpg" />
+    <Content Include="Images\Screenshots\5.jpg" />
     <Content Include="Images\shelter_volunteer.jpg" />
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
