@@ -20,7 +20,7 @@
                         </div>
                         <!--/col-->
                         <div class="col-xs-12 col-sm-8">
-                            <em><a href=@Model.OrganizationId>@Model.Organization.Name</a></em>
+                            <em><a href="~/Organizations/Details/@Model.OrganizationId" >@Model.Organization.Name</a></em>
                             <h2>@Html.Raw(Model.Name)</h2>
                             <h5><em>@Model.Type</em>@Html.DisplayFor(m => m.Gender, "Gender")</h5>
                             <p>@Html.Raw(Model.Story)</p>
