@@ -243,6 +243,7 @@
     <Compile Include="Controllers\AdoptersController.cs" />
     <Compile Include="Controllers\AdoptionFormsController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -267,6 +268,7 @@
     <Compile Include="Models\Adopter\AdopterDetailView.cs" />
     <Compile Include="Models\Animal\AnimalDetailView.cs" />
     <Compile Include="Models\Animal\AnimalsListView.cs" />
+    <Compile Include="Models\Comment\CreateCommentViewModel.cs" />
     <Compile Include="Models\Forms\AdoptionFormDetailViewModel.cs" />
     <Compile Include="Models\Forms\AdoptionFormsAdopterListViewModel.cs" />
     <Compile Include="Models\Forms\FormsListView.cs" />
@@ -374,6 +376,8 @@
     <Content Include="Images\SmartDogCat.jpg" />
     <Content Include="Images\vintage-green-pattern.jpg" />
     <Content Include="Images\volunteer.jpg" />
+    <Content Include="Scripts\App\comments.js" />
+    <Content Include="Scripts\App\gallery.js" />
     <Content Include="Scripts\App\searchAjaxScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -486,12 +490,17 @@
     <Content Include="Views\Error\Error400.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\Shared\_AddComment.cshtml" />
+    <Content Include="Views\Shared\Details.cshtml" />
+    <Content Include="Views\Shared\_Comments.cshtml" />
+    <Content Include="Views\Shared\_PagingComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Adopter\Views\Shared\" />
     <Folder Include="Areas\Organization\Views\Shared\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

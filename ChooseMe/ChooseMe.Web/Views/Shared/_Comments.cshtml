@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ChooseMe.Models.Comment>
+    <div id="comments">
+        @foreach (var comment in Model)
+        {
+            <em>@comment.User.UserName</em>
+            <div>
+                @comment.Content
+            </div>
+         <hr />
+        }
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryajax")
+    @Scripts.Render("~/bundles/customsearch")
+}

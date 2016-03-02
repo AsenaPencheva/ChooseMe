@@ -18,10 +18,13 @@ namespace ChooseMe.Web
                           "~/Scripts/jquery.unobtrusive-ajax.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/customsearch").Include(
-                       "~/Scripts/App/searchAjaxScript.js"));
+                        "~/Scripts/App/dropdown.js",
+                        "~/Scripts/App/searchAjaxScript.js"
+                        ));
 
-            bundles.Add(new ScriptBundle("~/bundles/customsearch").Include(
-                        "~/Scripts/App/dropdown.js"));
+            bundles.Add(new ScriptBundle("~/bundles/helpers").Include(
+                  "~/Scripts/App/comments.js",
+                   "~/Scripts/App/gallery.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

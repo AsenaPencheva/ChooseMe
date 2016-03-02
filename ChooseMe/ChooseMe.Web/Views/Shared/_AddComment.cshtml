@@ -1,0 +1,20 @@
+﻿@model ChooseMe.Web.Models.Comment.CreateCommentViewModel
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@Ajax.BeginForm("CreateComment", "Comments",
+                                            new AjaxOptions
+                                            {
+                                                HttpMethod = "POST",
+                                                InsertionMode = InsertionMode.InsertBefore,
+                                                UpdateTargetId = "comments"
+                                            })
+                                            {
+@Html.AntiForgeryToken()
+<form class="form-inline" role="form">
+    <div class="form-group">
+        @Html.HiddenFor(x => x.AnimalId)
+        @Html.TextAreaFor(x => x.Content)
+    </div>
+    <input type="submit" value="Comment" class="btn btn-warning" />
+</form>
+}

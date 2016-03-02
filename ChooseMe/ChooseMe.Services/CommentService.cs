@@ -5,7 +5,7 @@
     using Models;
     using ChooseMe.Services.Contracts;
     using Data.Repositories;
-    class CommentService : ICommentService
+    public class CommentService : ICommentService
     {
         private readonly IRepository<Comment> comments;
 

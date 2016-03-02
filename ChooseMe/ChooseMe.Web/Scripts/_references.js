@@ -1,4 +1,6 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app/comments.js" />
+/// <reference path="app/gallery.js" />
 /// <reference path="app/searchajaxscript.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="jquery.unobtrusive-ajax.js" />

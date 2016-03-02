@@ -1,0 +1,7 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Object>
+
+<div class="row text-center">
+    Page <em>@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) </em>of <em> @Model.PageCount</em>
+    @Html.PagedListPager(Model, page => Url.Action("Details", "Animals", new { page = page, id = ViewData["id"] }))
+</div>

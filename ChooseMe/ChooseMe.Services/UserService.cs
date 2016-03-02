@@ -21,6 +21,11 @@
             this.users.SaveChanges();
         }
 
+        public IQueryable<User> GetById(string id)
+        {
+            return this.users.All().Where(u => u.Id == id);
+        }
+
         public IQueryable<User> GetAll()
         {
             return this.users.All();

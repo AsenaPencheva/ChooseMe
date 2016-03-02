@@ -7,6 +7,8 @@
     {
         IQueryable<User> GetAll();
 
+        IQueryable<User> GetById(string id);
+
         void DeleteUser(string id);
     }
 }
