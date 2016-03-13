@@ -5,16 +5,20 @@
                                             new AjaxOptions
                                             {
                                                 HttpMethod = "POST",
-                                                InsertionMode = InsertionMode.InsertBefore,
+                                                InsertionMode = InsertionMode.Replace,
                                                 UpdateTargetId = "comments"
                                             })
                                             {
 @Html.AntiForgeryToken()
+@Html.HiddenFor(x => x.AnimalId)
+
 <form class="form-inline" role="form">
     <div class="form-group">
-        @Html.HiddenFor(x => x.AnimalId)
         @Html.TextAreaFor(x => x.Content)
     </div>
     <input type="submit" value="Comment" class="btn btn-warning" />
 </form>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
