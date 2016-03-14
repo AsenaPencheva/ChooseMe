@@ -305,3 +305,7 @@ h3>strong>a.home-link{
 body > div.container.body-content > div#profile{
     background-image: url("../Images/profile.jpg");
 }
+
+#hidden-comments{
+    display:none;
+}
