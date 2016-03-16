@@ -2,10 +2,11 @@
 {
     using ChooseMe.Models;
     using Microsoft.AspNet.Identity;
-    using Models.Animal;
     using Models.Comment;
     using PagedList;
     using Services.Contracts;
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
@@ -33,6 +34,8 @@
             {
                 model.Content = this.sanitizeService.Sanitize(model.Content);
 
+                model.CreatedOn = DateTime.UtcNow;
+
                 var newComment = AutoMapper.Mapper.Map<Comment>(model);
 
                 newComment.Animal = this.animals.GetById(newComment.AnimalId).FirstOrDefault();
@@ -48,6 +51,20 @@
                 return this.PartialView("_Comments", result);
             }
             throw new HttpException(400, "Invalid Comment");
+        }
+
+        public ActionResult Paging(int id, int? page)
+        {
+            var animal = animals.GetById(id).FirstOrDefault();
+
+            var comments = animal.Comments;
+
+            int pageNumber = (page ?? 1);
+
+            IEnumerable<CreateCommentViewModel> result = AutoMapper.Mapper.Map<IEnumerable<CreateCommentViewModel>>(comments);
+
+            return this.PartialView("_PagingComments", result.ToPagedList(pageNumber, 5));
+
         }
     }
 }

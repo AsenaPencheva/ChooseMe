@@ -1,17 +1,16 @@
 ﻿@model IEnumerable<ChooseMe.Models.Comment>
     <div id="comments">
-        @foreach (var comment in Model)
-        {
-            <em>@comment.User.UserName</em>
-            <div>
-                @comment.Content
-            </div>
-         <hr />
-        }
-    </div>
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryajax")
-    @Scripts.Render("~/bundles/customsearch")
-}
+        @{
+            var ordered = Model.OrderByDescending(c => c.CreatedOn);
+                }
+            @foreach (var comment in ordered)
+            {
+                <em>@comment.User.UserName</em>
+                <div>
+                    @comment.Content
+                </div>
+                <br />
+                <small>Added On: <em>@comment.CreatedOn</em></small>
+                <hr />
+            }
+</div>

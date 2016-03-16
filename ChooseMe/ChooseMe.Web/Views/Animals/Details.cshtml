@@ -107,6 +107,7 @@
                             @Html.Partial("_AddComment", new CreateCommentViewModel() { AnimalId = int.Parse(@Model.Id) })
                             <br />
                             @Html.Partial("_Comments", Model.Comments)
+                            @Html.Action("Paging", "Comments", new { id = Model.Id })
                             <hr>
                         </div>
                     </div>

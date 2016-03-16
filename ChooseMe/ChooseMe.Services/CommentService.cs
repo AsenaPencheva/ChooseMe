@@ -34,7 +34,8 @@
         {
             return this.comments
                 .All()
-                .Where(c => c.AnimalId == animalId);
+                .Where(c => c.AnimalId == animalId)
+                .OrderByDescending(c => c.CreatedOn);
         }
 
         public IQueryable<Comment> GetAllByUserId(string id)
