@@ -63,7 +63,7 @@
 
             IEnumerable<CreateCommentViewModel> result = AutoMapper.Mapper.Map<IEnumerable<CreateCommentViewModel>>(comments);
 
-            return this.PartialView("_PagingComments", result.ToPagedList(pageNumber, 5));
+            return this.PartialView("_PagingComments", result.ToPagedList(pageNumber, 2));
 
         }
     }

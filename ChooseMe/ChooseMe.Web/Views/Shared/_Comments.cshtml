@@ -5,12 +5,13 @@
                 }
             @foreach (var comment in ordered)
             {
-                <em>@comment.User.UserName</em>
+                <strong><em> @comment.User.UserName</em></strong>
+                <br/>
+                <small><em>@comment.CreatedOn</em></small>
+                <br />
                 <div>
                     @comment.Content
                 </div>
-                <br />
-                <small>Added On: <em>@comment.CreatedOn</em></small>
                 <hr />
             }
 </div>
