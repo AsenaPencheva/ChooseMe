@@ -91,7 +91,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Form.cs" />
     <Compile Include="Godparent.cs" />
-    <Compile Include="Like.cs" />
+    <Compile Include="Rating.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Photo.cs" />

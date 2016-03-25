@@ -60,7 +60,7 @@
 
         public virtual Organization Organization { get; set; }
 
-        public IEnumerable<Like> Likes { get; set; }
+        public IEnumerable<Rating> Ratings { get; set; }
 
         public IEnumerable<Comment> Comments { get; set; }
 

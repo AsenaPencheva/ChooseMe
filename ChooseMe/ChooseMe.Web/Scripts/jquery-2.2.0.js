@@ -354,7 +354,7 @@ jQuery.extend( {
 	each: function( obj, callback ) {
 		var length, i = 0;
 
-		if ( isArrayLike( obj ) ) {
+		if ( isArrayRating( obj ) ) {
 			length = obj.length;
 			for ( ; i < length; i++ ) {
 				if ( callback.call( obj[ i ], i, obj[ i ] ) === false ) {
@@ -384,7 +384,7 @@ jQuery.extend( {
 		var ret = results || [];
 
 		if ( arr != null ) {
-			if ( isArrayLike( Object( arr ) ) ) {
+			if ( isArrayRating( Object( arr ) ) ) {
 				jQuery.merge( ret,
 					typeof arr === "string" ?
 					[ arr ] : arr
@@ -441,7 +441,7 @@ jQuery.extend( {
 			ret = [];
 
 		// Go through the array, translating each of the items to their new values
-		if ( isArrayLike( elems ) ) {
+		if ( isArrayRating( elems ) ) {
 			length = elems.length;
 			for ( ; i < length; i++ ) {
 				value = callback( elems[ i ], i, arg );
@@ -521,7 +521,7 @@ function( i, name ) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 } );
 
-function isArrayLike( obj ) {
+function isArrayRating( obj ) {
 
 	// Support: iOS 8.2 (not reproducible in simulator)
 	// `in` check used to prevent JIT error (gh-2145)
@@ -1465,7 +1465,7 @@ Sizzle.error = function( msg ) {
 
 /**
  * Document sorting and removing duplicates
- * @param {ArrayLike} results
+ * @param {ArrayRating} results
  */
 Sizzle.uniqueSort = function( results ) {
 	var elem,

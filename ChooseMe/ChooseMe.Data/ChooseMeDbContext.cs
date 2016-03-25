@@ -32,7 +32,7 @@
 
         public virtual IDbSet<Godparent> Godparents { get; set; }
 
-        public virtual IDbSet<Like> Likes { get; set; }
+        public virtual IDbSet<Rating> Ratings { get; set; }
 
         public virtual IDbSet<Message> Messages { get; set; }
 

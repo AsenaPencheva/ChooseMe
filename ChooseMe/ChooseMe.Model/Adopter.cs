@@ -7,7 +7,7 @@
 
     public class Adopter: User
     {
-        private ICollection<Like> likes;
+        private ICollection<Rating> likes;
 
         private ICollection<AdoptionForm> adoptionForms;
 
@@ -15,7 +15,7 @@
         
         public Adopter()
         {
-            this.likes = new HashSet<Like>();
+            this.likes = new HashSet<Rating>();
             this.adoptionForms = new HashSet<AdoptionForm>();
             this.godparents = new HashSet<Godparent>();
         }
@@ -28,7 +28,7 @@
         [StringLength(ModelsConst.MaxLengthName, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = ModelsConst.MinLengthName)]
         public string LastName { get; set; }
 
-        public virtual ICollection<Like> Likes
+        public virtual ICollection<Rating> Ratings
         {
             get { return this.likes; }
             set { this.likes = value; }

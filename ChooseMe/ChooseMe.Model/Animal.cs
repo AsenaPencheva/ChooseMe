@@ -7,7 +7,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     public class Animal
     {
-        private ICollection<Like> likes;
+        private ICollection<Rating> likes;
 
         private ICollection<Comment> comments;
 
@@ -18,7 +18,7 @@
         public Animal()
         {
             this.AddedOn = DateTime.UtcNow;
-            this.likes = new HashSet<Like>();
+            this.likes = new HashSet<Rating>();
             this.comments = new HashSet<Comment>();
             this.adoptionForms = new HashSet<AdoptionForm>();
             this.photos = new HashSet<Photo>();
@@ -76,7 +76,7 @@
 
         public virtual Organization Organization { get; set; }
 
-        public virtual ICollection<Like> Likes
+        public virtual ICollection<Rating> Ratings
         {
             get { return this.likes; }
             set { this.likes = value; }
