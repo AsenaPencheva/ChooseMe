@@ -12,6 +12,7 @@
 <h2 class="text-center">@Model.Name</h2>
 <div class="text-center">Email: <em>@Model.Email</em></div>
 <br/>
+<h4>Rating: @Html.Action("Average", "Ratings", new { area = "" })</h4>
 @using (Html.BeginForm("Rate", "Ratings", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()

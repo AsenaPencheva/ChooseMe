@@ -5,10 +5,14 @@
 
     public interface IRatingService
     {
-        double GetAverage();
+        double GetAverage(string id);
 
         IQueryable<Rating> GetByUserAndOrganizationId(string id, string orgId);
 
         Rating AddNew(Rating rating);
+
+        bool CheckIfRate(string id);
+
+        void Update(int newRating, string stringId);
     }
 }

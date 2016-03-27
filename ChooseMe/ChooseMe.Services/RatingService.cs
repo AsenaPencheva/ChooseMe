@@ -23,16 +23,25 @@
             return rating;
         }
 
-        public double GetAverage()
+        public double GetAverage(string id)
         {
-            var sum = 0;
+            double sum = 0;
 
-            foreach(var rating in ratings.All())
+            var ratingsOrg = ratings.All().Where(r => r.OrganizationId == id);
+
+            foreach(var rating in ratingsOrg)
             {
-                sum += rating.Value;
+                sum += Convert.ToDouble(rating.Value);
             }
 
-            return sum / ratings.All().Count();
+            if (sum == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return Math.Round(sum / ratingsOrg.Count(), 2);
+            }
         }
 
         public IQueryable<Rating> GetByUserAndOrganizationId(string id, string orgId)
@@ -40,6 +49,27 @@
             return this.ratings
                 .All()
                 .Where(r => r.OrganizationId == orgId && r.UserId == id);
+        }
+
+        public void Update(int newRating, string userId)
+        {
+            Rating rating = this.ratings.All().Where(r => r.UserId == userId).FirstOrDefault();
+
+            rating.Value = newRating;
+
+            this.ratings.SaveChanges();
+        }
+
+        public bool CheckIfRate(string id)
+        {
+            if(this.ratings.All().Any(r => r.UserId == id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

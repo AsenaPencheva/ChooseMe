@@ -23,22 +23,33 @@
         {
             if (submit != null)
             {
-                var rating = new RateViewModel();
+                model.Value = int.Parse(submit);
 
-                rating.Value = int.Parse(submit);
+                model.UserId = User.Identity.GetUserId();
 
-                rating.UserId = User.Identity.GetUserId();
+                if (this.ratings.CheckIfRate(model.UserId))
+                {
+                    this.ratings.Update(model.Value, model.UserId);
+                }
+                else
+                {
+                    model.OrganizationId = model.OrganizationId;
 
-                rating.OrganizationId = model.OrganizationId;
+                    var newRating = Mapper.Map<Rating>(model);
 
-                var newRating = Mapper.Map<Rating>(rating);
-
-                this.ratings.AddNew(newRating);
+                    this.ratings.AddNew(newRating);
+                }
 
                 return this.RedirectToAction("Details", "Organizations", new { area = "", id =  model.OrganizationId});
             }
 
             return new HttpStatusCodeResult(404);
+        }
+
+        [HttpGet]
+        public ActionResult Average(string id)
+        {
+            return this.Content(this.ratings.GetAverage(id).ToString());
         }
     }
 }
