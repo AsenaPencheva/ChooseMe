@@ -14,7 +14,7 @@
 <div class="text-center">Email: <em>@Model.Email</em></div>
 <br />
 @{
-    var check = Html.Action("CheckIfRate", "Ratings", new { area = "", id = User.Identity.GetUserId() });
+    var check = Html.Action("CheckIfRate", "Ratings", new { area = "", userId = User.Identity.GetUserId(), orgId = Model.Id });
     var optsId = "";
 }
 <div class="row">
@@ -28,18 +28,18 @@
             var userRating = Html.Action("UserRating", "Ratings", new { area = "", userId = User.Identity.GetUserId(), orgId = Model.Id });
             <div class="acidjs-rating-stars">
                 <form>
-                    @for (int i = 1; i <= 5; i++)
-                {
-                    optsId = "group-2-" + i;
-                    if (int.Parse(userRating.ToString()) == i)
+                    @for (int i = 5; i >= 1; i--)
                     {
-                            <input type="radio" name="group-1" id=optsId checked="checked" disabled="disabled" /><label for=optsId></label>
-                        }
-                        else
+                        optsId = "group-2-" + i;
+                        if (int.Parse(userRating.ToString()) == i)
                         {
-                            <input type="radio" name="group-1" id=optsId disabled="disabled" /><label for=optsId></label>
+                                <input type="radio" name="group-1" id=optsId checked="checked" disabled="disabled" /><label for=optsId></label>
+                            }
+                            else
+                            {
+                                <input type="radio" name="group-1" id=optsId disabled="disabled" /><label for=optsId></label>
+                            }
                         }
-                    }
                 </form>
             </div>
         }

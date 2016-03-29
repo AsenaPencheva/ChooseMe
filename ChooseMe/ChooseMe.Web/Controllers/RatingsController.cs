@@ -47,9 +47,11 @@
         }
 
         [HttpGet]
-        public ActionResult CheckIfRate(string id)
+        public ActionResult CheckIfRate(string userId, string orgId)
         {
-            if(this.ratings.CheckIfRate(id))
+            var rating = this.ratings.GetByUserAndOrganizationId(userId, orgId).FirstOrDefault();
+
+            if (rating != null)
             {
                 return Content("true");
             }
